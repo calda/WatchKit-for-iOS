@@ -35,7 +35,7 @@ public class WatchStoryboard : NSObject, XMLParserDelegate {
     
     public func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         
-        if let component = WatchComponent(type: elementName, properties: attributeDict) {
+        if let component = WatchComponent.create(type: elementName, properties: attributeDict) {
             componentsInProgress.top?.addChild(component)
             componentsInProgress.push(push: component)
         }

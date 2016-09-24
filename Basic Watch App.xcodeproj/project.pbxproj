@@ -29,6 +29,7 @@
 		2EAE03611D96678E00C5D50E /* WatchComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE035E1D96678E00C5D50E /* WatchComponent.swift */; };
 		2EAE03621D96678E00C5D50E /* WatchStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE035F1D96678E00C5D50E /* WatchStoryboard.swift */; };
 		2EAE03641D9667E000C5D50E /* WKInterfaceGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE03631D9667E000C5D50E /* WKInterfaceGroup.swift */; };
+		2EAE03661D9670E900C5D50E /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE03651D9670E900C5D50E /* Operators.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		2EAE035E1D96678E00C5D50E /* WatchComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchComponent.swift; path = Parser/WatchComponent.swift; sourceTree = "<group>"; };
 		2EAE035F1D96678E00C5D50E /* WatchStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchStoryboard.swift; path = Parser/WatchStoryboard.swift; sourceTree = "<group>"; };
 		2EAE03631D9667E000C5D50E /* WKInterfaceGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WKInterfaceGroup.swift; path = "WatchKit Objects/WKInterfaceGroup.swift"; sourceTree = "<group>"; };
+		2EAE03651D9670E900C5D50E /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Parser/Operators.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 				2EAE035F1D96678E00C5D50E /* WatchStoryboard.swift */,
 				2EAE035E1D96678E00C5D50E /* WatchComponent.swift */,
 				2EAE035D1D96678E00C5D50E /* Stack.swift */,
+				2EAE03651D9670E900C5D50E /* Operators.swift */,
 			);
 			name = Parser;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				2EAE03641D9667E000C5D50E /* WKInterfaceGroup.swift in Sources */,
 				2EAE035B1D96673A00C5D50E /* WKInterfaceController.swift in Sources */,
 				2EAE03611D96678E00C5D50E /* WatchComponent.swift in Sources */,
+				2EAE03661D9670E900C5D50E /* Operators.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

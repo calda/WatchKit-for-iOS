@@ -6,34 +6,38 @@
 //  Copyright © 2016 Cal Stephens. All rights reserved.
 //
 
-let WKiOS_SUPPORTED_COMPONENTS: [String : WatchComponent.Type] = [
-    "controller" : WKInterfaceController.self,
-    "group" : WKInterfaceGroup.self
+typealias ComponentInitializer = (_ type: String, _ properties: [String : String]) -> WatchComponent
+
+let WKiOS_SUPPORTED_COMPONENTS: [String : ComponentInitializer] = [
+    "controller" : WKInterfaceController.init,
+    "group" : WKInterfaceGroup.init
 ]
 
-class WatchComponent : CustomStringConvertible {
+
+class WatchComponent {
     
     //MARK: - static helper
     
     static func create(type: String, properties: [String : String]) -> WatchComponent? {
-        if let type = WKiOS_SUPPORTED_COMPONENTS[type] {
-            //instantiate somehow
-        }
-            
-        else { return nil }
-        
+        if let initializer = WKiOS_SUPPORTED_COMPONENTS[type] {
+            return initializer(type, properties)
+        } else { return nil }
     }
     
     
     //MARK: - instance variables
     
-    var type: String
-    var properties: [String : String]
+    let id: String
+    let type: String
+    let properties: [String : String]
     
     var children: [WatchComponent]?
     
-    var description: String {
-        return type
+    
+    init(type: String, properties: [String : String]) {
+        self.type = type
+        self.properties = properties
+        self.id = properties["id"] ?? "<unknown id>"
     }
     
     func addChild(_ child: WatchComponent) {
@@ -43,13 +47,5 @@ class WatchComponent : CustomStringConvertible {
         
         children?.append(child)
     }
-    
-    init(type: String, properties: [String : String]) {
-        self.type = type
-        self.properties = properties
-    }
-    
-    
-    //MARK: - override points
 
 }

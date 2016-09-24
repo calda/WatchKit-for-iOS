@@ -10,5 +10,16 @@ import UIKit
 
 class WKInterfaceController : WatchComponent {
     
+    let identifier: String?
+    let title: String?
+    let customClassName: String?
+    
+    override init(type: String, properties: [String : String]) {
+        self.identifier = "identifier" <- properties
+        self.title = "title" <- properties
+        self.customClassName = "customClass" <- properties
+        
+        super.init(type: type, properties: properties)
+    }
     
 }
