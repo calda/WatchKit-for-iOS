@@ -19,9 +19,11 @@
 		2E0FF5F41D96410100105231 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0FF5F31D96410100105231 /* InterfaceController.swift */; };
 		2E0FF5F61D96410100105231 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0FF5F51D96410100105231 /* ExtensionDelegate.swift */; };
 		2E0FF5F81D96410100105231 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E0FF5F71D96410100105231 /* Assets.xcassets */; };
-		2E0FF6081D96422C00105231 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0FF5F31D96410100105231 /* InterfaceController.swift */; };
 		2E0FF6131D96478200105231 /* WatchKit for iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E0FF6111D96478200105231 /* WatchKit for iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2E46180D1D96585E0056F961 /* WatchStoryboard.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2E46180C1D96585E0056F961 /* WatchStoryboard.xml */; };
+		2E46886F1D96D461001A002B /* WatchKit Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E46886E1D96D461001A002B /* WatchKit Enums.swift */; };
+		2E4688711D96E458001A002B /* WKInterfaceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4688701D96E458001A002B /* WKInterfaceLabel.swift */; };
+		2E4688761D96E6E4001A002B /* WatchStoryboardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4688751D96E6E4001A002B /* WatchStoryboardColor.swift */; };
+		2E4688781D96EB3D001A002B /* Supported Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4688771D96EB3D001A002B /* Supported Components.swift */; };
 		2EAE03491D965B1A00C5D50E /* WatchKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E0FF60F1D96478200105231 /* WatchKit_iOS.framework */; };
 		2EAE034A1D965B1A00C5D50E /* WatchKit_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E0FF60F1D96478200105231 /* WatchKit_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2EAE035B1D96673A00C5D50E /* WKInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE035A1D96673A00C5D50E /* WKInterfaceController.swift */; };
@@ -30,6 +32,9 @@
 		2EAE03621D96678E00C5D50E /* WatchStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE035F1D96678E00C5D50E /* WatchStoryboard.swift */; };
 		2EAE03641D9667E000C5D50E /* WKInterfaceGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE03631D9667E000C5D50E /* WKInterfaceGroup.swift */; };
 		2EAE03661D9670E900C5D50E /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE03651D9670E900C5D50E /* Operators.swift */; };
+		2EAE036A1D96D1CC00C5D50E /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE03681D96D1CC00C5D50E /* InterfaceController.swift */; };
+		2EAE036B1D96D1CC00C5D50E /* WatchStoryboard.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2EAE03691D96D1CC00C5D50E /* WatchStoryboard.xml */; };
+		2EAE036E1D96D36E00C5D50E /* WKInterfaceObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE036C1D96D35A00C5D50E /* WKInterfaceObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,13 +117,19 @@
 		2E0FF60F1D96478200105231 /* WatchKit_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WatchKit_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E0FF6111D96478200105231 /* WatchKit for iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WatchKit for iOS.h"; sourceTree = "<group>"; };
 		2E0FF6121D96478200105231 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2E46180C1D96585E0056F961 /* WatchStoryboard.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = WatchStoryboard.xml; sourceTree = "<group>"; };
+		2E46886E1D96D461001A002B /* WatchKit Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "WatchKit Enums.swift"; path = "WatchKit Objects/WatchKit Enums.swift"; sourceTree = "<group>"; };
+		2E4688701D96E458001A002B /* WKInterfaceLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WKInterfaceLabel.swift; path = "WatchKit Objects/WKInterfaceLabel.swift"; sourceTree = "<group>"; };
+		2E4688751D96E6E4001A002B /* WatchStoryboardColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchStoryboardColor.swift; path = "Helper Objects/WatchStoryboardColor.swift"; sourceTree = "<group>"; };
+		2E4688771D96EB3D001A002B /* Supported Components.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Supported Components.swift"; path = "Parser/Supported Components.swift"; sourceTree = "<group>"; };
 		2EAE035A1D96673A00C5D50E /* WKInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WKInterfaceController.swift; path = "WatchKit Objects/WKInterfaceController.swift"; sourceTree = "<group>"; };
 		2EAE035D1D96678E00C5D50E /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = Parser/Stack.swift; sourceTree = "<group>"; };
 		2EAE035E1D96678E00C5D50E /* WatchComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchComponent.swift; path = Parser/WatchComponent.swift; sourceTree = "<group>"; };
 		2EAE035F1D96678E00C5D50E /* WatchStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchStoryboard.swift; path = Parser/WatchStoryboard.swift; sourceTree = "<group>"; };
 		2EAE03631D9667E000C5D50E /* WKInterfaceGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WKInterfaceGroup.swift; path = "WatchKit Objects/WKInterfaceGroup.swift"; sourceTree = "<group>"; };
 		2EAE03651D9670E900C5D50E /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Parser/Operators.swift; sourceTree = "<group>"; };
+		2EAE03681D96D1CC00C5D50E /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InterfaceController.swift; path = "Watch Files/InterfaceController.swift"; sourceTree = "<group>"; };
+		2EAE03691D96D1CC00C5D50E /* WatchStoryboard.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = WatchStoryboard.xml; path = "Watch Files/WatchStoryboard.xml"; sourceTree = "<group>"; };
+		2EAE036C1D96D35A00C5D50E /* WKInterfaceObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WKInterfaceObject.swift; path = "WatchKit Objects/WKInterfaceObject.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,12 +183,12 @@
 		2E0FF5CF1D96410100105231 /* Basic Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				2EAE03671D96D18600C5D50E /* Watch App Files */,
 				2E0FF5D01D96410100105231 /* AppDelegate.swift */,
 				2E0FF5D21D96410100105231 /* ViewController.swift */,
 				2E0FF5D41D96410100105231 /* Main.storyboard */,
 				2E0FF5D71D96410100105231 /* Assets.xcassets */,
 				2E0FF5D91D96410100105231 /* LaunchScreen.storyboard */,
-				2E46180C1D96585E0056F961 /* WatchStoryboard.xml */,
 				2E0FF5DC1D96410100105231 /* Info.plist */,
 			);
 			path = "Basic Watch App";
@@ -209,15 +220,25 @@
 			children = (
 				2EAE03551D96611F00C5D50E /* Parser */,
 				2EAE035C1D96673D00C5D50E /* WatchKit Objects */,
+				2E4688721D96E6A8001A002B /* Helper Objects */,
 				2E0FF6111D96478200105231 /* WatchKit for iOS.h */,
 				2E0FF6121D96478200105231 /* Info.plist */,
 			);
 			path = "WatchKit for iOS";
 			sourceTree = "<group>";
 		};
+		2E4688721D96E6A8001A002B /* Helper Objects */ = {
+			isa = PBXGroup;
+			children = (
+				2E4688751D96E6E4001A002B /* WatchStoryboardColor.swift */,
+			);
+			name = "Helper Objects";
+			sourceTree = "<group>";
+		};
 		2EAE03551D96611F00C5D50E /* Parser */ = {
 			isa = PBXGroup;
 			children = (
+				2E4688771D96EB3D001A002B /* Supported Components.swift */,
 				2EAE035F1D96678E00C5D50E /* WatchStoryboard.swift */,
 				2EAE035E1D96678E00C5D50E /* WatchComponent.swift */,
 				2EAE035D1D96678E00C5D50E /* Stack.swift */,
@@ -229,10 +250,22 @@
 		2EAE035C1D96673D00C5D50E /* WatchKit Objects */ = {
 			isa = PBXGroup;
 			children = (
+				2E46886E1D96D461001A002B /* WatchKit Enums.swift */,
 				2EAE035A1D96673A00C5D50E /* WKInterfaceController.swift */,
+				2EAE036C1D96D35A00C5D50E /* WKInterfaceObject.swift */,
 				2EAE03631D9667E000C5D50E /* WKInterfaceGroup.swift */,
+				2E4688701D96E458001A002B /* WKInterfaceLabel.swift */,
 			);
 			name = "WatchKit Objects";
+			sourceTree = "<group>";
+		};
+		2EAE03671D96D18600C5D50E /* Watch App Files */ = {
+			isa = PBXGroup;
+			children = (
+				2EAE03681D96D1CC00C5D50E /* InterfaceController.swift */,
+				2EAE03691D96D1CC00C5D50E /* WatchStoryboard.xml */,
+			);
+			name = "Watch App Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,7 +416,7 @@
 			files = (
 				2E0FF5DB1D96410100105231 /* LaunchScreen.storyboard in Resources */,
 				2E0FF5D81D96410100105231 /* Assets.xcassets in Resources */,
-				2E46180D1D96585E0056F961 /* WatchStoryboard.xml in Resources */,
+				2EAE036B1D96D1CC00C5D50E /* WatchStoryboard.xml in Resources */,
 				2E0FF5D61D96410100105231 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,7 +452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E0FF6081D96422C00105231 /* InterfaceController.swift in Sources */,
+				2EAE036A1D96D1CC00C5D50E /* InterfaceController.swift in Sources */,
 				2E0FF5D31D96410100105231 /* ViewController.swift in Sources */,
 				2E0FF5D11D96410100105231 /* AppDelegate.swift in Sources */,
 			);
@@ -438,8 +471,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E4688711D96E458001A002B /* WKInterfaceLabel.swift in Sources */,
 				2EAE03621D96678E00C5D50E /* WatchStoryboard.swift in Sources */,
+				2E4688761D96E6E4001A002B /* WatchStoryboardColor.swift in Sources */,
 				2EAE03601D96678E00C5D50E /* Stack.swift in Sources */,
+				2E4688781D96EB3D001A002B /* Supported Components.swift in Sources */,
+				2EAE036E1D96D36E00C5D50E /* WKInterfaceObject.swift in Sources */,
+				2E46886F1D96D461001A002B /* WatchKit Enums.swift in Sources */,
 				2EAE03641D9667E000C5D50E /* WKInterfaceGroup.swift in Sources */,
 				2EAE035B1D96673A00C5D50E /* WKInterfaceController.swift in Sources */,
 				2EAE03611D96678E00C5D50E /* WatchComponent.swift in Sources */,

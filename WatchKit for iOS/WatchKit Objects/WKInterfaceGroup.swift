@@ -8,8 +8,7 @@
 
 import UIKit
 
-class WKInterfaceGroup : WatchComponent {
-    
+public class WKInterfaceGroup : WKInterfaceObject<UIView> {
     
     
 }

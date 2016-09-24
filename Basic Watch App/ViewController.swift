@@ -14,7 +14,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let watchStoryboard = WatchStoryboard(fileName: "WatchStoryboard")
+        let watchStoryboard = WatchStoryboard(fileName: "WatchStoryboard", applicationNamespace: "Basic_Watch_App")
+        
+        print(watchStoryboard?.rootComponents)
+        
         
     }
 
