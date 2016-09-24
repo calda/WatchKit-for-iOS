@@ -7,19 +7,16 @@
 //
 
 import UIKit
+import WatchKit_iOS
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let watchStoryboard = WatchStoryboard(fileName: "WatchStoryboard")
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 
