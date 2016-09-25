@@ -42,6 +42,8 @@
 		2E9D56761D97D23A003A1FED /* SudokuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9D566F1D97D23A003A1FED /* SudokuCell.swift */; };
 		2E9D56771D97D23A003A1FED /* VictoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9D56701D97D23A003A1FED /* VictoryScreen.swift */; };
 		2E9D56791D97D646003A1FED /* WatchStoryboardOutlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9D56781D97D646003A1FED /* WatchStoryboardOutlet.swift */; };
+		2E9D56811D97EA62003A1FED /* WatchStoryboardMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9D56801D97EA62003A1FED /* WatchStoryboardMenuItem.swift */; };
+		2E9D56831D97ECB9003A1FED /* ForceTouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9D56821D97ECB9003A1FED /* ForceTouchView.swift */; };
 		2EAE03491D965B1A00C5D50E /* WatchKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E0FF60F1D96478200105231 /* WatchKit_iOS.framework */; };
 		2EAE034A1D965B1A00C5D50E /* WatchKit_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E0FF60F1D96478200105231 /* WatchKit_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2EAE035B1D96673A00C5D50E /* WKInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE035A1D96673A00C5D50E /* WKInterfaceController.swift */; };
@@ -155,6 +157,8 @@
 		2E9D566F1D97D23A003A1FED /* SudokuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SudokuCell.swift; path = "Watch Files/SudokuCell.swift"; sourceTree = "<group>"; };
 		2E9D56701D97D23A003A1FED /* VictoryScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VictoryScreen.swift; path = "Watch Files/VictoryScreen.swift"; sourceTree = "<group>"; };
 		2E9D56781D97D646003A1FED /* WatchStoryboardOutlet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchStoryboardOutlet.swift; path = "Helper Objects/WatchStoryboardOutlet.swift"; sourceTree = "<group>"; };
+		2E9D56801D97EA62003A1FED /* WatchStoryboardMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchStoryboardMenuItem.swift; path = "Helper Objects/WatchStoryboardMenuItem.swift"; sourceTree = "<group>"; };
+		2E9D56821D97ECB9003A1FED /* ForceTouchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForceTouchView.swift; path = "View Layer/ForceTouchView.swift"; sourceTree = "<group>"; };
 		2EAE035A1D96673A00C5D50E /* WKInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WKInterfaceController.swift; path = "WatchKit Objects/WKInterfaceController.swift"; sourceTree = "<group>"; };
 		2EAE035D1D96678E00C5D50E /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = Parser/Stack.swift; sourceTree = "<group>"; };
 		2EAE035E1D96678E00C5D50E /* WatchComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchComponent.swift; path = Parser/WatchComponent.swift; sourceTree = "<group>"; };
@@ -268,6 +272,7 @@
 				2E9D56621D978AA7003A1FED /* WatchStoryboardAction.swift */,
 				2E9D56681D97C6DE003A1FED /* WatchStoryboardSeugue.swift */,
 				2E9D56781D97D646003A1FED /* WatchStoryboardOutlet.swift */,
+				2E9D56801D97EA62003A1FED /* WatchStoryboardMenuItem.swift */,
 			);
 			name = "Helper Objects";
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 				2E9D565B1D975CF2003A1FED /* WatchLayoutDelegate.swift */,
 				2E4688821D9708D4001A002B /* Length.swift */,
 				2E9D56661D97B829003A1FED /* WatchPresentationStyle.swift */,
+				2E9D56821D97ECB9003A1FED /* ForceTouchView.swift */,
 			);
 			name = "View Layer";
 			sourceTree = "<group>";
@@ -536,10 +542,12 @@
 				2E4688711D96E458001A002B /* WKInterfaceLabel.swift in Sources */,
 				2E9D565D1D975DF2003A1FED /* WatchLayoutDelegate.swift in Sources */,
 				2E9D56791D97D646003A1FED /* WatchStoryboardOutlet.swift in Sources */,
+				2E9D56831D97ECB9003A1FED /* ForceTouchView.swift in Sources */,
 				2E9D56671D97B829003A1FED /* WatchPresentationStyle.swift in Sources */,
 				2EAE03621D96678E00C5D50E /* WatchStoryboard.swift in Sources */,
 				2E4688761D96E6E4001A002B /* WatchStoryboardColor.swift in Sources */,
 				2EAE03601D96678E00C5D50E /* Stack.swift in Sources */,
+				2E9D56811D97EA62003A1FED /* WatchStoryboardMenuItem.swift in Sources */,
 				2E4688781D96EB3D001A002B /* Supported Components.swift in Sources */,
 				2E4688811D970895001A002B /* WatchLayoutView.swift in Sources */,
 				2EAE036E1D96D36E00C5D50E /* WKInterfaceObject.swift in Sources */,

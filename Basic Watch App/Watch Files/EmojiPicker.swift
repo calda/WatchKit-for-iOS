@@ -33,7 +33,7 @@ class EmojiPicker : WKInterfaceController {
     
     func pressed(_ emoji: Emoji?) {
         main!.cell[main!.selectedCell.0][main!.selectedCell.1].emoji = emoji
-        self.pop()
+        self.dismiss()
     }
     
     @IBAction func pressed1() {

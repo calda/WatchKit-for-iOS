@@ -15,8 +15,11 @@ public class WatchStoryboard : NSObject, XMLParserDelegate {
     var initialControllerId: String?
     
     public var initialController: WKInterfaceController?
+    public var currentController: WKInterfaceController?
+    
     public var watchView: UIView
     var contentView: UIView
+    var forceTouchView: ForceTouchView
     
     //MARK: - Set up
     
@@ -29,6 +32,7 @@ public class WatchStoryboard : NSObject, XMLParserDelegate {
         self.initialControllerId = nil
         self.watchView = UIView()
         self.contentView = UIView()
+        self.forceTouchView = ForceTouchView()
         
         super.init()
         
@@ -46,10 +50,16 @@ public class WatchStoryboard : NSObject, XMLParserDelegate {
         self.contentView.frame = CGRect(origin: .zero, size: viewSize)
         self.watchView.addSubview(self.contentView)
         
+        self.forceTouchView.frame = CGRect(origin: .zero, size: viewSize)
+        self.forceTouchView.isUserInteractionEnabled = true
+        self.watchView.addSubview(self.forceTouchView)
+        
         if let initialController = self.initialController {
             initialController.willActivate()
             self.contentView.addSubview(initialController.view)
             initialController.didAppear()
+            
+            self.currentController = self.initialController
         }
     }
     
@@ -60,7 +70,6 @@ public class WatchStoryboard : NSObject, XMLParserDelegate {
     func controller(forId id: String) -> WKInterfaceController? {
         return self.rootComponents.flatMap { $0 as? WKInterfaceController }.first { $0.id == id }
     }
-    
     
     //MARK: - Parse
     

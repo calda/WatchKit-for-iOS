@@ -8,16 +8,16 @@
 
 import UIKit
 
-class WatchStoryboardAction : WatchComponent {
+public class WatchStoryboardAction : WatchComponent {
     
-    let selectorName: String?
+    public let selectorName: String?
     
     required public init(type: String, properties: [String : String]) {
         self.selectorName = "selector" <- properties
         super.init(type: type, properties: properties)
     }
     
-    func applySelector(from sender: UIButton?, to responder: WKInterfaceController?) {
+    public func applySelector(from sender: UIButton?, to responder: WKInterfaceController?) {
         guard let selectorName = self.selectorName else { return }
         guard let button = sender else { return }
         guard let controller = responder else { return }

@@ -62,7 +62,7 @@ class CustomPicker: WKInterfaceController {
             }
         }
         
-        main!.dismiss()
+        self.dismiss()
         
     }
     

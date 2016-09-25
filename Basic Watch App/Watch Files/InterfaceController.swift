@@ -99,7 +99,7 @@ class InterfaceController: WKInterfaceController {
             return
         }
         cell[col][row].setSelectedOnButton(buttonMap[col][row]!)
-        self.pushController(withName: "picker", context: self)
+        self.presentController(withName: "picker", context: self)
     }
     
     override func willActivate() {

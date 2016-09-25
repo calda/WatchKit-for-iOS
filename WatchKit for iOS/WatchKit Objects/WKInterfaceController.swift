@@ -24,6 +24,10 @@ open class WKInterfaceController : WatchComponent, WatchLayoutDelegate {
     
     let spacing: CGFloat
     
+    public var menuItems: [WatchStoryboardMenuItem] {
+        return self.children?.flatMap { $0 as? WatchStoryboardMenuItem } ?? []
+    }
+    
     required public init(type: String, properties: [String : String]) {
         self.identifier = "identifier" <- properties
         self.title = "title" <- properties
@@ -48,12 +52,11 @@ open class WKInterfaceController : WatchComponent, WatchLayoutDelegate {
     
     override func doneLoadingChildren() {
         let outlets = self.children?.flatMap{ $0 as? WatchStoryboardOutlet } ?? []
-        print(outlets)
         outlets.forEach { outlet in
             outlet.connectToView(in: self)
         }
         
-        print("done?")
+        print("done loading \(self.title ?? "unnamed Controller")")
     }
     
     func setUpView() {
@@ -185,8 +188,9 @@ open class WKInterfaceController : WatchComponent, WatchLayoutDelegate {
         controller.willActivate()
 
         style.transition(direction, to: controller, in: storyboard, completion: {
-            self.didAppear()
-            controller.didDeactivate()
+            self.didDeactivate()
+            controller.didAppear()
+            storyboard.currentController = controller
         })
     }
     

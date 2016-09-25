@@ -4,7 +4,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -40,51 +39,46 @@
                                     <constraint firstAttribute="width" secondItem="8Wa-mA-XAr" secondAttribute="height" multiplier="187:313" id="j9p-gf-ZL8"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xj0-Bi-0cZ">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="51" id="eK8-By-fDo"/>
-                                </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="Emoji Sudoku">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="26" name="HelveticaNeue-Thin"/>
-                                            <font key="NSOriginalFont" size="26" name="HelveticaNeue-Thin"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="                                                                 ">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="is waiting for you on Apple Watch">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                            <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E5o-0l-Dpq">
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <state key="normal" title="gives menu of options">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.45154644691780821" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="simulateForceTouch:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lVs-cm-Kuk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7b8-Mk-N5H">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.055704195205479451" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="Simulate Force Touch">
+                                    <color key="titleColor" red="0.36148742756419888" green="0.69239859448538887" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="simulateForceTouch:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="iGJ-Cd-imo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97000002861022949" green="0.97000002861022949" blue="0.97000002861022949" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xj0-Bi-0cZ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="6Cj-by-CG2"/>
                             <constraint firstAttribute="centerX" secondItem="8Wa-mA-XAr" secondAttribute="centerX" id="6WR-6c-AeV"/>
+                            <constraint firstItem="E5o-0l-Dpq" firstAttribute="top" secondItem="7b8-Mk-N5H" secondAttribute="bottom" id="8rr-Fm-iMr"/>
                             <constraint firstItem="58H-lT-5g7" firstAttribute="centerY" secondItem="8Wa-mA-XAr" secondAttribute="centerY" id="A7W-bN-5hy"/>
                             <constraint firstItem="iQ4-T8-foz" firstAttribute="centerX" secondItem="58H-lT-5g7" secondAttribute="centerX" id="Dov-4Y-0bv"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xj0-Bi-0cZ" secondAttribute="trailing" id="GLT-cD-7uD"/>
                             <constraint firstAttribute="centerY" secondItem="8Wa-mA-XAr" secondAttribute="centerY" constant="25" id="JCx-mT-edt"/>
                             <constraint firstItem="58H-lT-5g7" firstAttribute="centerX" secondItem="8Wa-mA-XAr" secondAttribute="centerX" id="Oe7-4V-MZ2"/>
                             <constraint firstAttribute="width" secondItem="8Wa-mA-XAr" secondAttribute="height" multiplier="375:667" id="YNs-VO-qPX"/>
+                            <constraint firstItem="E5o-0l-Dpq" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="ag8-Tj-Qm5"/>
                             <constraint firstItem="iQ4-T8-foz" firstAttribute="centerY" secondItem="58H-lT-5g7" secondAttribute="centerY" id="c5S-dp-nZY"/>
                             <constraint firstAttribute="centerY" secondItem="8Wa-mA-XAr" secondAttribute="centerY" id="gtS-2p-4YR"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="xj0-Bi-0cZ" secondAttribute="bottom" constant="16" id="veS-bi-Z8l"/>
+                            <constraint firstItem="7b8-Mk-N5H" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="rFx-iI-mqq"/>
+                            <constraint firstItem="7b8-Mk-N5H" firstAttribute="top" secondItem="8Wa-mA-XAr" secondAttribute="bottom" constant="28" id="tCz-rC-DSM"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
