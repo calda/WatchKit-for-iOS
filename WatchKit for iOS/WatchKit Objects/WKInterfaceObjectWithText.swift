@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class WKInterfaceObjectWithText : WKInterfaceObject {
+open class WKInterfaceObjectWithText : WKInterfaceObject {
     
     
     //MARK: - Override Points
@@ -48,7 +48,7 @@ class WKInterfaceObjectWithText : WKInterfaceObject {
                                     context: nil).size
     }
     
-    override var intrinsicHeight: Length? {
+    override var intrinsicHeightValue: Length? {
         if let superviewWidth = self.view()?.superview?.frame.width {
             let constrainedSize = CGSize(width: superviewWidth, height: 1000)
             let idealSize = self.idealSize(constrainedSize: constrainedSize)
@@ -60,8 +60,8 @@ class WKInterfaceObjectWithText : WKInterfaceObject {
         return Length.absolute(font.pointSize + padding)
     }
     
-    override var intrinsicWidth: Length? {
-        if let height = self.intrinsicHeight?.numberValue {
+    override var intrinsicWidthValue: Length? {
+        if let height = self.intrinsicHeightValue?.numberValue {
             let constrainedSize = CGSize(width: 1000, height: height)
             let idealSize = self.idealSize(constrainedSize: constrainedSize)
             return Length.absolute(idealSize.width + padding)

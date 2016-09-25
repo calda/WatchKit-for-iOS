@@ -19,9 +19,9 @@ public class WKInterfaceGroup : WKInterfaceObject, WatchLayoutDelegate {
         return self.children?.flatMap{ $0 as? WKInterfaceObject } ?? []
     }
     
-    override var intrinsicHeight: Length? {
+    override var intrinsicHeightValue: Length? {
         let heights = self.subviews.flatMap{ interfaceObject -> CGFloat? in
-            guard let height = interfaceObject.height ?? interfaceObject.intrinsicHeight else { return nil }
+            guard let height = interfaceObject.heightValue ?? interfaceObject.intrinsicHeightValue else { return nil }
             switch height {
                 case let .absolute(size): return size
                 default: return nil

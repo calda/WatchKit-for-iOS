@@ -46,6 +46,16 @@ open class WKInterfaceController : WatchComponent, WatchLayoutDelegate {
         super.addChild(child)
     }
     
+    override func doneLoadingChildren() {
+        let outlets = self.children?.flatMap{ $0 as? WatchStoryboardOutlet } ?? []
+        print(outlets)
+        outlets.forEach { outlet in
+            outlet.connectToView(in: self)
+        }
+        
+        print("done?")
+    }
+    
     func setUpView() {
         let viewBounds = CGRect(x: 0, y: 0, width: 156, height: 195)
         self.view = UIView(frame: viewBounds)
@@ -78,9 +88,9 @@ open class WKInterfaceController : WatchComponent, WatchLayoutDelegate {
         let scrollViewBounds = CGRect(x: 0, y: 21, width: 156, height: 174)
         self.scrollView = UIScrollView(frame: scrollViewBounds)
         self.view.addSubview(self.scrollView)
-        self.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: -20, right: 0)
+        self.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
-        let contentViewBounds = CGRect(x: 0, y: 0, width: 156, height: 100)
+        let contentViewBounds = CGRect(x: 0, y: 0, width: 156, height: 160)
         self.contentView = WatchLayoutView(frame: contentViewBounds)
         self.contentView.delegate = self
         self.contentView.clipsToBounds = false
@@ -117,35 +127,36 @@ open class WKInterfaceController : WatchComponent, WatchLayoutDelegate {
     }
     
     
-    //MARK: - WatchKit Methods
+    //MARK: - WatchKit Presentation Methods
     
     public func presentController(withName name: String, context: Any?) {
-        self.segue(withName: name, orId: nil, style: .modal, direction: .forward)
+        self.segue(withName: name, orId: nil, style: .modal, direction: .forward, context: context)
     }
     
     public func presentController(withId id: String, context: Any?) {
-        self.segue(withName: nil, orId: id, style: .modal, direction: .forward)
+        self.segue(withName: nil, orId: id, style: .modal, direction: .forward, context: context)
     }
     
     public func dismiss() {
-        self.segue(withName: nil, orId: nil, style: .modal, direction: .backward)
+        self.segue(withName: nil, orId: nil, style: .modal, direction: .backward, context: nil)
     }
     
     public func pushController(withName name: String, context: Any?) {
-        self.segue(withName: name, orId: nil, style: .push, direction: .forward)
+        self.segue(withName: name, orId: nil, style: .push, direction: .forward, context: context)
     }
     
     public func pushController(withId id: String, context: Any?) {
-        self.segue(withName: nil, orId: id, style: .push, direction: .forward)
+        self.segue(withName: nil, orId: id, style: .push, direction: .forward, context: context)
     }
     
     public func pop() {
-        self.segue(withName: nil, orId: nil, style: .push, direction: .backward)
+        self.segue(withName: nil, orId: nil, style: .push, direction: .backward, context: nil)
     }
     
-    private func segue(withName name: String?, orId id: String?, style: WatchPresentationStyle, direction: WatchPresentationDirection) {
+    private func segue(withName name: String?, orId id: String?, style: WatchPresentationStyle, direction: WatchPresentationDirection, context: Any?) {
         guard let storyboard = self.storyboard else { return }
         
+        //choose correct controller
         let controller: WKInterfaceController!
         
         if let id = id {
@@ -166,9 +177,27 @@ open class WKInterfaceController : WatchComponent, WatchLayoutDelegate {
             controller.presenter = self
             controller.presentationStyle = style
         }
+        
+        //call lifecycle methods and animate
+        controller.awake(withContext: context)
+        
+        self.willDisappear()
+        controller.willActivate()
 
-        style.transition(direction, to: controller, in: storyboard)
+        style.transition(direction, to: controller, in: storyboard, completion: {
+            self.didAppear()
+            controller.didDeactivate()
+        })
     }
+    
+    
+    //MARK: - WatchKit lifecycle methods
+    
+    open func awake(withContext context: Any?) { }
+    open func willActivate() { }
+    open func didDeactivate() { }
+    open func didAppear() { }
+    open func willDisappear() { }
     
     
 }

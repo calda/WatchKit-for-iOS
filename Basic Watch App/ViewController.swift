@@ -12,16 +12,15 @@ import WatchKit_iOS
 class ViewController: UIViewController {
 
     var watchStoryboard: WatchStoryboard!
-    
+    @IBOutlet weak var watchContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.watchStoryboard = WatchStoryboard(fileName: "WatchStoryboard", applicationNamespace: "Basic_Watch_App")
+        self.watchStoryboard = WatchStoryboard(fileName: "Interface", applicationNamespace: "Basic_Watch_App")
         
         guard let watchView = watchStoryboard?.watchView else { return }
-        self.view.addSubview(watchView)
-        watchView.frame.origin = CGPoint(x: 30, y: 30)
+        self.watchContainer.addSubview(watchView)
     }
 
 }

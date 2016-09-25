@@ -15,5 +15,3 @@ FOUNDATION_EXPORT double WatchKit_for_iOSVersionNumber;
 FOUNDATION_EXPORT const unsigned char WatchKit_for_iOSVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <WatchKit_for_iOS/PublicHeader.h>
-
-

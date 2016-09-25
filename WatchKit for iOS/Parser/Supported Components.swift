@@ -18,6 +18,7 @@ let WKiOS_SUPPORTED_COMPONENTS: [String : WatchComponent.Type] = [
     "color" : WatchStoryboardColor.self,
     "fontDescription" : WatchStoryboardFont.self,
     "action" : WatchStoryboardAction.self,
-    "segue" : WatchStoryboardSegue.self
+    "segue" : WatchStoryboardSegue.self,
+    "outlet" : WatchStoryboardOutlet.self
     
 ]

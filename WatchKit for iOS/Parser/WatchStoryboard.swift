@@ -47,7 +47,9 @@ public class WatchStoryboard : NSObject, XMLParserDelegate {
         self.watchView.addSubview(self.contentView)
         
         if let initialController = self.initialController {
+            initialController.willActivate()
             self.contentView.addSubview(initialController.view)
+            initialController.didAppear()
         }
     }
     

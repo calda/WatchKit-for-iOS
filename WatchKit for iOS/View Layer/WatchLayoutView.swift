@@ -41,8 +41,8 @@ public class WatchLayoutView : UIView {
                 availableWidth = self.frame.width - spaceFromPadding
             }
             
-            let height = (subview.height ?? subview.intrinsicHeight)?.length(in: self.frame.height)
-            let width = (subview.width ?? subview.intrinsicWidth)?.length(in: availableWidth)
+            let height = (subview.heightValue ?? subview.intrinsicHeightValue)?.length(in: self.frame.height)
+            let width = (subview.widthValue ?? subview.intrinsicWidthValue)?.length(in: availableWidth)
             
             subview.view()?.frame = CGRect(x: x, y: y, width: width ?? 0, height: height ?? 0)
         }

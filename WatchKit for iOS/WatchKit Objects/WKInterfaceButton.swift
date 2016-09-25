@@ -8,17 +8,17 @@
 
 import UIKit
 
-class WKInterfaceButton : WKInterfaceObjectWithText {
+open class WKInterfaceButton : WKInterfaceObjectWithText {
     
-    var title: String? { didSet { self.view()?.setTitle(title, for: .normal) } }
-    var titleColor: UIColor? { didSet { self.view()?.setTitleColor(titleColor, for: .normal) } }
-    var titleFont: UIFont? { didSet { self.view()?.titleLabel?.font = titleFont } }
-    var backgroundColor: UIColor? { didSet { self.view()?.backgroundColor = backgroundColor } }
+    var titleValue: String? { didSet { self.view()?.setTitle(titleValue, for: .normal) } }
+    var titleColorValue: UIColor? { didSet { self.view()?.setTitleColor(titleColorValue, for: .normal) } }
+    var titleFontValue: UIFont? { didSet { self.view()?.titleLabel?.font = titleFontValue } }
+    var backgroundColorValue: UIColor? { didSet { self.view()?.backgroundColor = backgroundColorValue } }
     
     var segue: WatchStoryboardSegue? = nil
     
     required public init(type: String, properties: [String : String]) {
-        title = "title" <- properties
+        titleValue = "title" <- properties
         
         super.init(type: type, properties: properties)
         
@@ -33,33 +33,33 @@ class WKInterfaceButton : WKInterfaceObjectWithText {
     override func applyPropertiesToView() {
         super.applyPropertiesToView()
         
-        view()?.setTitle(self.title, for: .normal)
-        view()?.setTitleColor(self.titleColor, for: .normal)
-        view()?.titleLabel?.font = self.titleFont
-        view()?.backgroundColor = self.backgroundColor
+        view()?.setTitle(self.titleValue, for: .normal)
+        view()?.setTitleColor(self.titleColorValue, for: .normal)
+        view()?.titleLabel?.font = self.titleFontValue
+        view()?.backgroundColor = self.backgroundColorValue
     }
     
-    override func view() -> UIButton? {
+    override public func view() -> UIButton? {
         return backingView as? UIButton
     }
     
     override func doneLoadingChildren() {
         let colors = children?.flatMap { $0 as? WatchStoryboardColor }
         if let titleColor = colors?.filter({ $0.key == "titleColor" }).first?.color {
-            self.titleColor = titleColor
-        } else if self.titleColor == nil {
-            self.titleColor = UIColor.white
+            self.titleColorValue = titleColor
+        } else if self.titleColorValue == nil {
+            self.titleColorValue = UIColor.white
         }
         
         if let backgroundColor = colors?.filter({ $0.key == "backgroundColor" }).first?.color {
-            self.backgroundColor = backgroundColor
-        } else if self.backgroundColor == nil {
-            self.backgroundColor = UIColor(white: 0.15, alpha: 1.0)
+            self.backgroundColorValue = backgroundColor
+        } else if self.backgroundColorValue == nil {
+            self.backgroundColorValue = UIColor(white: 0.15, alpha: 1.0)
         }
         
         let fonts = children?.flatMap { $0 as? WatchStoryboardFont }
         if let titleFont = fonts?.first?.font {
-            self.titleFont = titleFont
+            self.titleFontValue = titleFont
         }
         
         let actions = children?.flatMap { $0 as? WatchStoryboardAction } ?? []
@@ -90,15 +90,26 @@ class WKInterfaceButton : WKInterfaceObjectWithText {
     //MARK: - WKInterfaceObjectWithText
     
     override func textForIntrinsicSizeCalulation() -> String? {
-        return self.title
+        return self.titleValue
     }
     
     override func fontForIntrinsicSizeCalulation() -> UIFont? {
-        return self.titleFont
+        return self.titleFontValue
     }
     
     override func paddingForIntrinsicSizeCalculation() -> CGFloat? {
         return 10.0
+    }
+    
+    
+    //MARK: - WatchKit methods
+    
+    public func setTitle(_ title: String?) {
+        self.titleValue = title
+    }
+    
+    public func setBackgroundColor(_ color: UIColor?) {
+        self.backgroundColorValue = color
     }
     
 }

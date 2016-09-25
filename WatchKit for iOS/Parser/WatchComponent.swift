@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class WatchComponent {
+open class WatchComponent : NSObject {
     
     //MARK: - static helper
     

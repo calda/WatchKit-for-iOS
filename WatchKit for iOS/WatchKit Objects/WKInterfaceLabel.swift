@@ -8,23 +8,23 @@
 
 import UIKit
 
-class WKInterfaceLabel : WKInterfaceObjectWithText {
+open class WKInterfaceLabel : WKInterfaceObjectWithText {
     
-    var text: String? { didSet { view()?.text = text } }
-    var attributedText: NSAttributedString? { didSet { view()?.attributedText = attributedText } }
+    var textValue: String? { didSet { view()?.text = textValue } }
+    var attributedTextValue: NSAttributedString? { didSet { view()?.attributedText = attributedTextValue } }
     
-    var color: UIColor { didSet { view()?.textColor = color } }
-    var textAlignment: NSTextAlignment { didSet { view()?.textAlignment = textAlignment } }
-    var font: UIFont { didSet { view()?.font = font } }
+    var colorValue: UIColor { didSet { view()?.textColor = colorValue } }
+    var textAlignmentValue: NSTextAlignment { didSet { view()?.textAlignment = textAlignmentValue } }
+    var fontValue: UIFont { didSet { view()?.font = fontValue } }
     
     
     //MARK: - Set up
     
     required public init(type: String, properties: [String : String]) {
-        text = "text" <- properties
-        color = UIColor.white
-        font = WKFontStyle.body.font
-        textAlignment = "textAlignment" <- properties
+        textValue = "text" <- properties
+        colorValue = UIColor.white
+        fontValue = WKFontStyle.body.font
+        textAlignmentValue = "textAlignment" <- properties
         
         super.init(type: type, properties: properties)
         
@@ -36,27 +36,27 @@ class WKInterfaceLabel : WKInterfaceObjectWithText {
         super.applyPropertiesToView()
         
         view()?.font = UIFont.systemFont(ofSize: 16.0)
-        view()?.text = text
-        view()?.textColor = color
-        view()?.textAlignment = textAlignment
+        view()?.text = textValue
+        view()?.textColor = colorValue
+        view()?.textAlignment = textAlignmentValue
         view()?.numberOfLines = 0
     }
     
     override func doneLoadingChildren() {
         let colors = children?.flatMap { $0 as? WatchStoryboardColor }
         if let color = colors?.first?.color {
-            self.color = color
+            self.colorValue = color
         }
         
         let fonts = children?.flatMap { $0 as? WatchStoryboardFont }
         if let font = fonts?.first?.font {
-            self.font = font
+            self.fontValue = font
         }
         
         children = nil
     }
     
-    override func view() -> UILabel? {
+    override public func view() -> UILabel? {
         return self.backingView as? UILabel
     }
     
@@ -64,14 +64,18 @@ class WKInterfaceLabel : WKInterfaceObjectWithText {
     //MARK: - WKInterfaceObjectWithText
     
     override func textForIntrinsicSizeCalulation() -> String? {
-        return self.text
+        return self.textValue
     }
     
     override func fontForIntrinsicSizeCalulation() -> UIFont? {
-        return self.font
+        return self.fontValue
     }
     
     
     //MARK: - WatchKit functions
+    
+    public func setText(_ text: String?) {
+        self.textValue = text
+    }
     
 }
