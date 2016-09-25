@@ -8,22 +8,36 @@
 
 import UIKit
 
-class WKInterfaceLabel : WKInterfaceObject<UILabel> {
+class WKInterfaceLabel : WKInterfaceObject {
     
-    var text: String? { didSet { backingView?.text = text } }
-    var attributedText: NSAttributedString? { didSet { backingView?.attributedText = attributedText } }
+    var text: String? { didSet { view()?.text = text } }
+    var attributedText: NSAttributedString? { didSet { view()?.attributedText = attributedText } }
     
-    var color: UIColor { didSet { backingView?.textColor = color } }
+    var color: UIColor { didSet { view()?.textColor = color } }
+    var textAlignment: NSTextAlignment { didSet { view()?.textAlignment = textAlignment } }
     
-    override var intrinsicHeight: CGFloat? {
-        return 20.0
-    }
+    
+    //MARK: - Set up
     
     required public init(type: String, properties: [String : String]) {
         text = "text" <- properties
         color = UIColor.white
+        textAlignment = "textAlignment" <- properties
         
         super.init(type: type, properties: properties)
+        
+        backingView = UILabel()
+        applyPropertiesToView()
+    }
+    
+    override func applyPropertiesToView() {
+        super.applyPropertiesToView()
+        
+        view()?.font = UIFont.systemFont(ofSize: 16.0)
+        view()?.text = text
+        view()?.textColor = color
+        view()?.textAlignment = textAlignment
+        view()?.numberOfLines = 0
     }
     
     override func doneLoadingChildren() {
@@ -34,6 +48,43 @@ class WKInterfaceLabel : WKInterfaceObject<UILabel> {
         
         children = nil
     }
+    
+    override func view() -> UILabel? {
+        return self.backingView as? UILabel
+    }
+    
+    
+    //MARK: - Dynamic sizing
+    
+    func idealSize(constrainedSize: CGSize) -> CGSize {
+        let attributes: [String : AnyObject] = [NSFontAttributeName : self.view()!.font]
+        let drawingOptions: NSStringDrawingOptions = [.usesLineFragmentOrigin, .usesFontLeading]
+        
+        let content = NSString(string: self.text ?? "")
+        return content.boundingRect(with: constrainedSize,
+                                    options: drawingOptions,
+                                    attributes: attributes,
+                                    context: nil).size
+    }
+    
+    override var intrinsicHeight: Length? {
+        if let superviewWidth = self.view()?.superview?.frame.width {
+            let constrainedSize = CGSize(width: superviewWidth, height: 1000)
+            let idealSize = self.idealSize(constrainedSize: constrainedSize)
+            return Length.absolute(idealSize.height)
+        }
+        return Length.absolute(16.0)
+    }
+    
+    override var intrinsicWidth: Length? {
+        if let height = self.intrinsicHeight?.numberValue {
+            let constrainedSize = CGSize(width: 1000, height: height)
+            let idealSize = self.idealSize(constrainedSize: constrainedSize)
+            return Length.absolute(idealSize.width)
+        }
+        return nil
+    }
+
     
     
     //MARK: - WatchKit functions

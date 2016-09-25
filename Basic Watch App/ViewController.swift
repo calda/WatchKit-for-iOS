@@ -11,12 +11,16 @@ import WatchKit_iOS
 
 class ViewController: UIViewController {
 
+    var watchController: WKInterfaceController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let watchStoryboard = WatchStoryboard(fileName: "WatchStoryboard", applicationNamespace: "Basic_Watch_App")
+        watchController = watchStoryboard!.rootComponents[0] as! WKInterfaceController
         
-        print(watchStoryboard?.rootComponents)
+        self.view.addSubview(watchController.view)
+        watchController.view.frame.origin = CGPoint(x: 30, y: 30)
         
         
     }

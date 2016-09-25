@@ -22,13 +22,12 @@ func <-(key: String, dict: [String : String]) -> String? {
 }
 
 func <-(key: String, dict: [String : String]) -> Double? {
-    guard let string = dict[key] else { return nil }
+    guard let string: String = key <- dict else { return nil }
     return Double(string)
 }
 
 func <-(key: String, dict: [String : String]) -> CGFloat? {
-    guard let string = dict[key] else { return nil }
-    guard let double = Double(string) else { return nil }
+    guard let double: Double = key <- dict else { return nil }
     return CGFloat(double)
 }
 
@@ -45,10 +44,19 @@ func <-(key: String, dict: [String : String]) -> Bool {
 
 //MARK: - Objects
 
+func <-(key: String, dict: [String : String]) -> Length? {
+    guard let cgFloat: CGFloat = key <- dict else { return nil }
+    return Length.from(float: cgFloat)
+}
+
+func <-(key: String, dict: [String : String]) -> NSTextAlignment {
+    return NSTextAlignment.fromString(string: key <- dict)
+}
+
 func <-(key: String, dict: [String : String]) -> WKInterfaceObjectVerticalAlignment {
-    return WKInterfaceObjectVerticalAlignment.fromString(string: dict[key])
+    return WKInterfaceObjectVerticalAlignment.fromString(string: key <- dict)
 }
 
 func <-(key: String, dict: [String : String]) -> WKInterfaceObjectHorizontalAlignment {
-    return WKInterfaceObjectHorizontalAlignment.fromString(string: dict[key])
+    return WKInterfaceObjectHorizontalAlignment.fromString(string: key <- dict)
 }

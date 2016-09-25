@@ -24,6 +24,10 @@
 		2E4688711D96E458001A002B /* WKInterfaceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4688701D96E458001A002B /* WKInterfaceLabel.swift */; };
 		2E4688761D96E6E4001A002B /* WatchStoryboardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4688751D96E6E4001A002B /* WatchStoryboardColor.swift */; };
 		2E4688781D96EB3D001A002B /* Supported Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4688771D96EB3D001A002B /* Supported Components.swift */; };
+		2E46887F1D97086E001A002B /* UIViewBacked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E46887E1D97086E001A002B /* UIViewBacked.swift */; };
+		2E4688811D970895001A002B /* WatchLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4688801D970895001A002B /* WatchLayoutView.swift */; };
+		2E4688831D9708D4001A002B /* Length.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4688821D9708D4001A002B /* Length.swift */; };
+		2E9D565D1D975DF2003A1FED /* WatchLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9D565B1D975CF2003A1FED /* WatchLayoutDelegate.swift */; };
 		2EAE03491D965B1A00C5D50E /* WatchKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E0FF60F1D96478200105231 /* WatchKit_iOS.framework */; };
 		2EAE034A1D965B1A00C5D50E /* WatchKit_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E0FF60F1D96478200105231 /* WatchKit_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2EAE035B1D96673A00C5D50E /* WKInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE035A1D96673A00C5D50E /* WKInterfaceController.swift */; };
@@ -121,6 +125,10 @@
 		2E4688701D96E458001A002B /* WKInterfaceLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WKInterfaceLabel.swift; path = "WatchKit Objects/WKInterfaceLabel.swift"; sourceTree = "<group>"; };
 		2E4688751D96E6E4001A002B /* WatchStoryboardColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchStoryboardColor.swift; path = "Helper Objects/WatchStoryboardColor.swift"; sourceTree = "<group>"; };
 		2E4688771D96EB3D001A002B /* Supported Components.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Supported Components.swift"; path = "Parser/Supported Components.swift"; sourceTree = "<group>"; };
+		2E46887E1D97086E001A002B /* UIViewBacked.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewBacked.swift; path = "View Layer/UIViewBacked.swift"; sourceTree = "<group>"; };
+		2E4688801D970895001A002B /* WatchLayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchLayoutView.swift; path = "View Layer/WatchLayoutView.swift"; sourceTree = "<group>"; };
+		2E4688821D9708D4001A002B /* Length.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Length.swift; path = "View Layer/Length.swift"; sourceTree = "<group>"; };
+		2E9D565B1D975CF2003A1FED /* WatchLayoutDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchLayoutDelegate.swift; path = "View Layer/WatchLayoutDelegate.swift"; sourceTree = "<group>"; };
 		2EAE035A1D96673A00C5D50E /* WKInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WKInterfaceController.swift; path = "WatchKit Objects/WKInterfaceController.swift"; sourceTree = "<group>"; };
 		2EAE035D1D96678E00C5D50E /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = Parser/Stack.swift; sourceTree = "<group>"; };
 		2EAE035E1D96678E00C5D50E /* WatchComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchComponent.swift; path = Parser/WatchComponent.swift; sourceTree = "<group>"; };
@@ -221,6 +229,7 @@
 				2EAE03551D96611F00C5D50E /* Parser */,
 				2EAE035C1D96673D00C5D50E /* WatchKit Objects */,
 				2E4688721D96E6A8001A002B /* Helper Objects */,
+				2E46887D1D97084A001A002B /* View Layer */,
 				2E0FF6111D96478200105231 /* WatchKit for iOS.h */,
 				2E0FF6121D96478200105231 /* Info.plist */,
 			);
@@ -233,6 +242,17 @@
 				2E4688751D96E6E4001A002B /* WatchStoryboardColor.swift */,
 			);
 			name = "Helper Objects";
+			sourceTree = "<group>";
+		};
+		2E46887D1D97084A001A002B /* View Layer */ = {
+			isa = PBXGroup;
+			children = (
+				2E46887E1D97086E001A002B /* UIViewBacked.swift */,
+				2E4688801D970895001A002B /* WatchLayoutView.swift */,
+				2E9D565B1D975CF2003A1FED /* WatchLayoutDelegate.swift */,
+				2E4688821D9708D4001A002B /* Length.swift */,
+			);
+			name = "View Layer";
 			sourceTree = "<group>";
 		};
 		2EAE03551D96611F00C5D50E /* Parser */ = {
@@ -472,16 +492,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E4688711D96E458001A002B /* WKInterfaceLabel.swift in Sources */,
+				2E9D565D1D975DF2003A1FED /* WatchLayoutDelegate.swift in Sources */,
 				2EAE03621D96678E00C5D50E /* WatchStoryboard.swift in Sources */,
 				2E4688761D96E6E4001A002B /* WatchStoryboardColor.swift in Sources */,
 				2EAE03601D96678E00C5D50E /* Stack.swift in Sources */,
 				2E4688781D96EB3D001A002B /* Supported Components.swift in Sources */,
+				2E4688811D970895001A002B /* WatchLayoutView.swift in Sources */,
 				2EAE036E1D96D36E00C5D50E /* WKInterfaceObject.swift in Sources */,
 				2E46886F1D96D461001A002B /* WatchKit Enums.swift in Sources */,
 				2EAE03641D9667E000C5D50E /* WKInterfaceGroup.swift in Sources */,
+				2E46887F1D97086E001A002B /* UIViewBacked.swift in Sources */,
 				2EAE035B1D96673A00C5D50E /* WKInterfaceController.swift in Sources */,
 				2EAE03611D96678E00C5D50E /* WatchComponent.swift in Sources */,
 				2EAE03661D9670E900C5D50E /* Operators.swift in Sources */,
+				2E4688831D9708D4001A002B /* Length.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

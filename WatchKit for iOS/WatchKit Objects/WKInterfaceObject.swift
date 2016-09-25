@@ -9,20 +9,24 @@
 import Foundation
 import UIKit
 
-open class WKInterfaceObject<T : UIView> : WatchComponent {
+open class WKInterfaceObject : WatchComponent, UIViewBacked {
     
-    var backingView: T?
+    var backingView: UIView?
     
-    var alpha: CGFloat { didSet { backingView?.alpha = alpha } }
-    var hidden: Bool { didSet { backingView?.isHidden = hidden } }
+    var alpha: CGFloat { didSet { view()?.alpha = alpha } }
+    var hidden: Bool { didSet { view()?.isHidden = hidden } }
     
     var horizontalAlignment: WKInterfaceObjectHorizontalAlignment
     var verticalAlignment: WKInterfaceObjectVerticalAlignment
     
-    var specifiedWidth: CGFloat?
-    var specifiedHeight: CGFloat?
+    var height: Length?
+    var width: Length?
     
-    var intrinsicHeight: CGFloat? {
+    var intrinsicHeight: Length? {
+        return nil
+    }
+    
+    var intrinsicWidth: Length? {
         return nil
     }
     
@@ -39,10 +43,19 @@ open class WKInterfaceObject<T : UIView> : WatchComponent {
         self.horizontalAlignment = "alignment" <- properties
         self.verticalAlignment = "verticalAlignment" <- properties
         
-        self.specifiedWidth = "width" <- properties
-        self.specifiedHeight = "height" <- properties
+        self.width = "width" <- properties
+        self.height = "height" <- properties
         
         super.init(type: type, properties: properties)
+    }
+    
+    func applyPropertiesToView() {
+        view()?.alpha = alpha
+        view()?.isHidden = hidden
+    }
+    
+    public func view() -> UIView? {
+        return backingView
     }
     
     
@@ -57,19 +70,19 @@ open class WKInterfaceObject<T : UIView> : WatchComponent {
     }
     
     func setWidth(_ width: CGFloat) {
-        self.specifiedHeight = width
+        self.width = Length.absolute(width)
     }
     
-    func setRelativeWidth(_ width: CGFloat, withAdjstment: CGFloat) {
-        self.specifiedWidth = width
+    func setRelativeWidth(_ width: CGFloat, withAdjstment: CGFloat = 0) {
+        self.width = Length.relative(percentage: width)
     }
     
     func setHeight(_ height: CGFloat) {
-        self.specifiedHeight = height
+        self.height = Length.absolute(height)
     }
     
-    func setRelativeHeight(_ height: CGFloat, withAdjstment: CGFloat) {
-        self.specifiedHeight = height
+    func setRelativeHeight(_ height: CGFloat, withAdjstment: CGFloat = 0) {
+        self.height = Length.relative(percentage: height)
     }
     
 }

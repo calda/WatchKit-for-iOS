@@ -6,12 +6,15 @@
 //  Copyright © 2016 Cal Stephens. All rights reserved.
 //
 
+import UIKit
+
 enum WKInterfaceObjectHorizontalAlignment {
     case left, center, right
     
     static func fromString(string: String?) -> WKInterfaceObjectHorizontalAlignment {
-        if string?.lowercased() == "center" { return .center }
-        if string?.lowercased() == "right" { return .right }
+        let lowercase = string?.lowercased()
+        if lowercase == "center" { return .center }
+        if lowercase == "right" { return .right }
         return .left
     }
     
@@ -21,9 +24,27 @@ enum WKInterfaceObjectVerticalAlignment {
     case top, center, bottom
     
     static func fromString(string: String?) -> WKInterfaceObjectVerticalAlignment {
-        if string?.lowercased() == "center" { return .center }
-        if string?.lowercased() == "bottom" { return .bottom }
+        let lowercase = string?.lowercased()
+        if lowercase == "center" { return .center }
+        if lowercase == "bottom" { return .bottom }
         return .top
+    }
+    
+}
+
+@objc enum WKInterfaceLayoutDirection: Int {
+    case vertical, horizontal
+}
+
+extension NSTextAlignment {
+    
+    static func fromString(string: String?) -> NSTextAlignment {
+        let lowercase = string?.lowercased()
+        if lowercase == "left" { return .left }
+        if lowercase == "right" { return .right }
+        if lowercase == "center" { return .center }
+        if lowercase == "justified" { return .justified }
+        return .natural
     }
     
 }
