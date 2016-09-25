@@ -32,6 +32,8 @@
 		2E9D56611D977B24003A1FED /* WKInterfaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9D56601D977B24003A1FED /* WKInterfaceButton.swift */; };
 		2E9D56631D978AA7003A1FED /* WatchStoryboardAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9D56621D978AA7003A1FED /* WatchStoryboardAction.swift */; };
 		2E9D56651D979173003A1FED /* WKInterfaceObjectWithText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9D56641D979173003A1FED /* WKInterfaceObjectWithText.swift */; };
+		2E9D56671D97B829003A1FED /* WatchPresentationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9D56661D97B829003A1FED /* WatchPresentationStyle.swift */; };
+		2E9D56691D97C6DE003A1FED /* WatchStoryboardSeugue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9D56681D97C6DE003A1FED /* WatchStoryboardSeugue.swift */; };
 		2EAE03491D965B1A00C5D50E /* WatchKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E0FF60F1D96478200105231 /* WatchKit_iOS.framework */; };
 		2EAE034A1D965B1A00C5D50E /* WatchKit_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E0FF60F1D96478200105231 /* WatchKit_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2EAE035B1D96673A00C5D50E /* WKInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE035A1D96673A00C5D50E /* WKInterfaceController.swift */; };
@@ -137,6 +139,8 @@
 		2E9D56601D977B24003A1FED /* WKInterfaceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WKInterfaceButton.swift; path = "WatchKit Objects/WKInterfaceButton.swift"; sourceTree = "<group>"; };
 		2E9D56621D978AA7003A1FED /* WatchStoryboardAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchStoryboardAction.swift; path = "Helper Objects/WatchStoryboardAction.swift"; sourceTree = "<group>"; };
 		2E9D56641D979173003A1FED /* WKInterfaceObjectWithText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WKInterfaceObjectWithText.swift; path = "WatchKit Objects/WKInterfaceObjectWithText.swift"; sourceTree = "<group>"; };
+		2E9D56661D97B829003A1FED /* WatchPresentationStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchPresentationStyle.swift; path = "View Layer/WatchPresentationStyle.swift"; sourceTree = "<group>"; };
+		2E9D56681D97C6DE003A1FED /* WatchStoryboardSeugue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchStoryboardSeugue.swift; path = "Helper Objects/WatchStoryboardSeugue.swift"; sourceTree = "<group>"; };
 		2EAE035A1D96673A00C5D50E /* WKInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WKInterfaceController.swift; path = "WatchKit Objects/WKInterfaceController.swift"; sourceTree = "<group>"; };
 		2EAE035D1D96678E00C5D50E /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = Parser/Stack.swift; sourceTree = "<group>"; };
 		2EAE035E1D96678E00C5D50E /* WatchComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchComponent.swift; path = Parser/WatchComponent.swift; sourceTree = "<group>"; };
@@ -250,6 +254,7 @@
 				2E4688751D96E6E4001A002B /* WatchStoryboardColor.swift */,
 				2E9D565E1D976B95003A1FED /* WatchStoryboardFont.swift */,
 				2E9D56621D978AA7003A1FED /* WatchStoryboardAction.swift */,
+				2E9D56681D97C6DE003A1FED /* WatchStoryboardSeugue.swift */,
 			);
 			name = "Helper Objects";
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 				2E4688801D970895001A002B /* WatchLayoutView.swift */,
 				2E9D565B1D975CF2003A1FED /* WatchLayoutDelegate.swift */,
 				2E4688821D9708D4001A002B /* Length.swift */,
+				2E9D56661D97B829003A1FED /* WatchPresentationStyle.swift */,
 			);
 			name = "View Layer";
 			sourceTree = "<group>";
@@ -506,6 +512,7 @@
 				2E9D56631D978AA7003A1FED /* WatchStoryboardAction.swift in Sources */,
 				2E4688711D96E458001A002B /* WKInterfaceLabel.swift in Sources */,
 				2E9D565D1D975DF2003A1FED /* WatchLayoutDelegate.swift in Sources */,
+				2E9D56671D97B829003A1FED /* WatchPresentationStyle.swift in Sources */,
 				2EAE03621D96678E00C5D50E /* WatchStoryboard.swift in Sources */,
 				2E4688761D96E6E4001A002B /* WatchStoryboardColor.swift in Sources */,
 				2EAE03601D96678E00C5D50E /* Stack.swift in Sources */,
@@ -521,6 +528,7 @@
 				2E9D56651D979173003A1FED /* WKInterfaceObjectWithText.swift in Sources */,
 				2EAE03611D96678E00C5D50E /* WatchComponent.swift in Sources */,
 				2EAE03661D9670E900C5D50E /* Operators.swift in Sources */,
+				2E9D56691D97C6DE003A1FED /* WatchStoryboardSeugue.swift in Sources */,
 				2E4688831D9708D4001A002B /* Length.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

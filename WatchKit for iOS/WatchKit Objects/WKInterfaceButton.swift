@@ -11,10 +11,11 @@ import UIKit
 class WKInterfaceButton : WKInterfaceObjectWithText {
     
     var title: String? { didSet { self.view()?.setTitle(title, for: .normal) } }
-    var titleColor: UIColor? { didSet { self.view()?.tintColor = titleColor } }
+    var titleColor: UIColor? { didSet { self.view()?.setTitleColor(titleColor, for: .normal) } }
     var titleFont: UIFont? { didSet { self.view()?.titleLabel?.font = titleFont } }
-    
     var backgroundColor: UIColor? { didSet { self.view()?.backgroundColor = backgroundColor } }
+    
+    var segue: WatchStoryboardSegue? = nil
     
     required public init(type: String, properties: [String : String]) {
         title = "title" <- properties
@@ -22,6 +23,7 @@ class WKInterfaceButton : WKInterfaceObjectWithText {
         super.init(type: type, properties: properties)
         
         self.backingView = UIButton()
+        self.view()?.addTarget(self, action: #selector(self.buttonPressed), for: .primaryActionTriggered)
         self.backingView?.layer.cornerRadius = 5.0
         
         doneLoadingChildren()
@@ -32,7 +34,7 @@ class WKInterfaceButton : WKInterfaceObjectWithText {
         super.applyPropertiesToView()
         
         view()?.setTitle(self.title, for: .normal)
-        view()?.tintColor = self.titleColor
+        view()?.setTitleColor(self.titleColor, for: .normal)
         view()?.titleLabel?.font = self.titleFont
         view()?.backgroundColor = self.backgroundColor
     }
@@ -65,6 +67,23 @@ class WKInterfaceButton : WKInterfaceObjectWithText {
             action.applySelector(from: view(), to: self.controller)
         }
         
+        let segues = children?.flatMap { $0 as? WatchStoryboardSegue } ?? []
+        self.segue = segues.first
+        
+    }
+    
+    
+    //MARK: - User Interaction
+    
+    @objc func buttonPressed() {
+        guard let segue = self.segue else { return }
+        guard let destinationId = segue.destinationId else { return }
+        
+        if segue.presentationStyle == .push {
+            self.controller?.pushController(withId: destinationId, context: nil)
+        } else {
+            self.controller?.presentController(withId: destinationId, context: nil)
+        }
     }
     
     
@@ -81,8 +100,5 @@ class WKInterfaceButton : WKInterfaceObjectWithText {
     override func paddingForIntrinsicSizeCalculation() -> CGFloat? {
         return 10.0
     }
-    
-    
-    
     
 }

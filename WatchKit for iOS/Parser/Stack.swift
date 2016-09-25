@@ -12,7 +12,7 @@ struct Stack<T> {
     
     var array : [T] = []
     
-    mutating func push(push: T) {
+    mutating func push(_ push: T) {
         array.append(push)
     }
     

@@ -15,8 +15,8 @@ import UIKit
     @objc optional func watchLayoutSpacing() -> CGFloat
     @objc optional func watchLayoutChildrenComponents() -> [AnyObject]
     
-    @objc optional func watchLayoutPaddingAtStart() -> CGFloat
-    //@objc optional func watchLayoutPaddingAtEnd() -> CGFloat //not sure how to best implement this
+    @objc optional func watchLayoutPadding() -> CGFloat
+    @objc optional func watchLayoutSetsOwnFrameHeight() -> Bool
     
 }
 

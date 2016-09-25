@@ -19,12 +19,12 @@ public class WatchLayoutView : UIView {
         let subviews = childComponents.flatMap { $0 as? WKInterfaceObject }
         
         let direction = delegate.watchLayoutDirection()
-        let initialSpacing = delegate.watchLayoutPaddingAtStart?() ?? 0
+        let padding = delegate.watchLayoutPadding?() ?? 0
         let regularSpacing = delegate.watchLayoutSpacing?() ?? 4.0
         
         for (index, subview) in subviews.enumerated() {
             let previousSubview: WKInterfaceObject? = (index == 0 ? nil : subviews[index - 1])
-            let spacing = (previousSubview == nil ? initialSpacing : regularSpacing)
+            let spacing = (previousSubview == nil ? padding : regularSpacing)
             
             var x: CGFloat = 0
             var y: CGFloat = 0
@@ -37,7 +37,7 @@ public class WatchLayoutView : UIView {
             
             var availableWidth = self.frame.width
             if direction == .horizontal {
-                let spaceFromPadding = initialSpacing + (regularSpacing * CGFloat(subviews.count - 1))
+                let spaceFromPadding = padding + (regularSpacing * CGFloat(subviews.count - 1))
                 availableWidth = self.frame.width - spaceFromPadding
             }
             
@@ -46,6 +46,21 @@ public class WatchLayoutView : UIView {
             
             subview.view()?.frame = CGRect(x: x, y: y, width: width ?? 0, height: height ?? 0)
         }
+        
+        if delegate.watchLayoutSetsOwnFrameHeight?() == true {
+            let bottomOfLowestView: CGFloat = subviews.reduce(0) { current, subview in
+                return max(current, subview.backingView?.frame.maxY ?? 0)
+            }
+            
+            let height = bottomOfLowestView
+            self.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: height)
+            
+            if let owningScrollView = self.superview as? UIScrollView {
+                owningScrollView.contentSize = self.frame.size
+            }
+        }
+        
+        
     }
     
 }

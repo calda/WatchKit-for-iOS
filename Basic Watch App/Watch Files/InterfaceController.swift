@@ -10,7 +10,6 @@
 import Foundation
 import WatchKit_iOS
 
-
 class InterfaceController: WKInterfaceController {
 
     /*override func awake(withContext context: Any?) {
@@ -30,6 +29,6 @@ class InterfaceController: WKInterfaceController {
     }*/
 
     @IBAction func pushPressed() {
-        print("PUSH")
+        self.presentController(withName: "modal", context: nil)
     }
 }
