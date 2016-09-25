@@ -11,8 +11,11 @@ import UIKit
 class WatchStoryboardColor : WatchComponent {
     
     let color: UIColor?
+    let key: String
     
     required init(type: String, properties: [String : String]) {
+        self.key = ("key" <- properties) ?? "<unknown key>"
+        
         let red: CGFloat? = "red" <- properties
         let green: CGFloat? = "green" <- properties
         let blue: CGFloat? = "blue" <- properties

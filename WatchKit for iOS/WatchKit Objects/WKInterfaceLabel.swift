@@ -8,13 +8,14 @@
 
 import UIKit
 
-class WKInterfaceLabel : WKInterfaceObject {
+class WKInterfaceLabel : WKInterfaceObjectWithText {
     
     var text: String? { didSet { view()?.text = text } }
     var attributedText: NSAttributedString? { didSet { view()?.attributedText = attributedText } }
     
     var color: UIColor { didSet { view()?.textColor = color } }
     var textAlignment: NSTextAlignment { didSet { view()?.textAlignment = textAlignment } }
+    var font: UIFont { didSet { view()?.font = font } }
     
     
     //MARK: - Set up
@@ -22,6 +23,7 @@ class WKInterfaceLabel : WKInterfaceObject {
     required public init(type: String, properties: [String : String]) {
         text = "text" <- properties
         color = UIColor.white
+        font = WKFontStyle.body.font
         textAlignment = "textAlignment" <- properties
         
         super.init(type: type, properties: properties)
@@ -41,9 +43,14 @@ class WKInterfaceLabel : WKInterfaceObject {
     }
     
     override func doneLoadingChildren() {
-        let colors = children?.filter({ $0 is WatchStoryboardColor })
-        if let storyboardColor = colors?.first as? WatchStoryboardColor, let color = storyboardColor.color {
+        let colors = children?.flatMap { $0 as? WatchStoryboardColor }
+        if let color = colors?.first?.color {
             self.color = color
+        }
+        
+        let fonts = children?.flatMap { $0 as? WatchStoryboardFont }
+        if let font = fonts?.first?.font {
+            self.font = font
         }
         
         children = nil
@@ -54,37 +61,15 @@ class WKInterfaceLabel : WKInterfaceObject {
     }
     
     
-    //MARK: - Dynamic sizing
+    //MARK: - WKInterfaceObjectWithText
     
-    func idealSize(constrainedSize: CGSize) -> CGSize {
-        let attributes: [String : AnyObject] = [NSFontAttributeName : self.view()!.font]
-        let drawingOptions: NSStringDrawingOptions = [.usesLineFragmentOrigin, .usesFontLeading]
-        
-        let content = NSString(string: self.text ?? "")
-        return content.boundingRect(with: constrainedSize,
-                                    options: drawingOptions,
-                                    attributes: attributes,
-                                    context: nil).size
+    override func textForIntrinsicSizeCalulation() -> String? {
+        return self.text
     }
     
-    override var intrinsicHeight: Length? {
-        if let superviewWidth = self.view()?.superview?.frame.width {
-            let constrainedSize = CGSize(width: superviewWidth, height: 1000)
-            let idealSize = self.idealSize(constrainedSize: constrainedSize)
-            return Length.absolute(idealSize.height)
-        }
-        return Length.absolute(16.0)
+    override func fontForIntrinsicSizeCalulation() -> UIFont? {
+        return self.font
     }
-    
-    override var intrinsicWidth: Length? {
-        if let height = self.intrinsicHeight?.numberValue {
-            let constrainedSize = CGSize(width: 1000, height: height)
-            let idealSize = self.idealSize(constrainedSize: constrainedSize)
-            return Length.absolute(idealSize.width)
-        }
-        return nil
-    }
-
     
     
     //MARK: - WatchKit functions

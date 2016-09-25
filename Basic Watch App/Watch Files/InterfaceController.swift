@@ -29,4 +29,7 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }*/
 
+    @IBAction func pushPressed() {
+        print("PUSH")
+    }
 }

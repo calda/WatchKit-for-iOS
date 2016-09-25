@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>WatchKit_iOS</string>
 	<key>CFBundleIdentifier</key>
-	<string>WatchKit_iOS</string>
+	<string>tech.calstephens.watchkit-ios</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

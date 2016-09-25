@@ -10,13 +10,15 @@
             <objects>
                 <controller identifier="rootController" title="Root Controller" spacing="4" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Basic_Watch_App_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label width="1" alignment="left" alpha="0.5" text="Basic Watch App, multi-line label" textAlignment="center" baselineAdjustment="alignCenters" numberOfLines="2" minimumScaleFactor="0.5" id="0Pl-Sq-Sxi">
+                        <label width="1" alignment="left" text="Basic Watch App, multi-line label" textAlignment="center" baselineAdjustment="alignCenters" numberOfLines="2" minimumScaleFactor="0.5" id="0Pl-Sq-Sxi">
                             <color key="textColor" red="0.83471745249999996" green="0.83241826299999999" blue="0.98160225150000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
                         <group width="1" alignment="left" spacing="50" id="9SJ-1p-d9X">
                             <items>
-                                <label alignment="left" text="Left" id="XTB-zi-e1k"/>
+                                <label alignment="left" text="Left" id="XTB-zi-e1k">
+                                    <fontDescription key="font" type="system" weight="heavy" pointSize="16"/>
+                                </label>
                                 <label alignment="left" text="Right" textAlignment="left" id="h9K-W3-Yf0"/>
                             </items>
                         </group>
@@ -28,8 +30,17 @@
                         </group>
                         <group width="1" alignment="left" spacing="4" id="tdg-00-fZ2">
                             <items>
-                                <button width="0.5" height="0.5" alignment="left" verticalAlignment="center" title="Push" id="nhq-9b-8WS"/>
-                                <button width="0.5" height="100" alignment="left" title="Present" id="Ynr-Uj-Jce"/>
+                                <button width="0.5" height="1" alignment="left" verticalAlignment="center" title="Push" id="nhq-9b-8WS">
+                                    <color key="titleColor" red="0.79204241179627266" green="1" blue="0.71354166666666674" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.21812017310000001" green="0.38144465080000001" blue="0.15761844799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="16"/>
+                                    <connections>
+                                        <action selector="pushPressed" destination="AgC-eL-Hgc" id="V1r-5V-KCa"/>
+                                    </connections>
+                                </button>
+                                <button width="0.5" alignment="left" title="Present" id="Ynr-Uj-Jce">
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </button>
                             </items>
                         </group>
                         <label width="1" alignment="left" hidden="YES" text="Hidden Label" textAlignment="center" id="5q1-5q-NR9"/>

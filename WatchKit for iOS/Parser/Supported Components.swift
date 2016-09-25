@@ -7,8 +7,16 @@
 //
 
 let WKiOS_SUPPORTED_COMPONENTS: [String : WatchComponent.Type] = [
+    
+    //WatchKit objects
     "controller" : WKInterfaceController.self,
     "group" : WKInterfaceGroup.self,
     "label" : WKInterfaceLabel.self,
-    "color" : WatchStoryboardColor.self
+    "button" : WKInterfaceButton.self,
+    
+    //Helper Objects
+    "color" : WatchStoryboardColor.self,
+    "fontDescription" : WatchStoryboardFont.self,
+    "action" : WatchStoryboardAction.self
+    
 ]

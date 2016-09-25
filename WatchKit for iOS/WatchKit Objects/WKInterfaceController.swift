@@ -33,8 +33,12 @@ open class WKInterfaceController : WatchComponent, WatchLayoutDelegate {
     }
     
     override func addChild(_ child: WatchComponent) {
-        if let interfaceObject = child as? WKInterfaceObject, let backingView = interfaceObject.backingView {
-            view.addSubview(backingView)
+        if let interfaceObject = child as? WKInterfaceObject {
+            interfaceObject.controller = self
+            
+            if let backingView = interfaceObject.backingView {
+                view.addSubview(backingView)
+            }
         }
         
         super.addChild(child)

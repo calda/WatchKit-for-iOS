@@ -1,0 +1,74 @@
+//
+//  WKInterfaceObjectWithText.swift
+//  Basic Watch App
+//
+//  Created by Cal Stephens on 9/25/16.
+//  Copyright © 2016 Cal Stephens. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+class WKInterfaceObjectWithText : WKInterfaceObject {
+    
+    
+    //MARK: - Override Points
+    
+    func textForIntrinsicSizeCalulation() -> String? {
+        return nil
+    }
+    
+    func fontForIntrinsicSizeCalulation() -> UIFont? {
+        return nil
+    }
+    
+    func paddingForIntrinsicSizeCalculation() -> CGFloat? {
+        return nil
+    }
+    
+    private var padding: CGFloat {
+        return (paddingForIntrinsicSizeCalculation() ?? 0) * 2
+    }
+    
+    
+    //MARK: - Dynamic sizing
+    
+    private func idealSize(constrainedSize: CGSize) -> CGSize {
+        let text = self.textForIntrinsicSizeCalulation() ?? "word"
+        let systemFont = UIFont.systemFont(ofSize: UIFont.systemFontSize)
+        let font = self.fontForIntrinsicSizeCalulation() ?? systemFont
+        
+        let attributes: [String : AnyObject] = [NSFontAttributeName : font]
+        let drawingOptions: NSStringDrawingOptions = [.usesLineFragmentOrigin, .usesFontLeading]
+        
+        let content = NSString(string: text)
+        return content.boundingRect(with: constrainedSize,
+                                    options: drawingOptions,
+                                    attributes: attributes,
+                                    context: nil).size
+    }
+    
+    override var intrinsicHeight: Length? {
+        if let superviewWidth = self.view()?.superview?.frame.width {
+            let constrainedSize = CGSize(width: superviewWidth, height: 1000)
+            let idealSize = self.idealSize(constrainedSize: constrainedSize)
+            return Length.absolute(idealSize.height + padding)
+        }
+        
+        let systemFont = UIFont.systemFont(ofSize: UIFont.systemFontSize)
+        let font = self.fontForIntrinsicSizeCalulation() ?? systemFont
+        return Length.absolute(font.pointSize + padding)
+    }
+    
+    override var intrinsicWidth: Length? {
+        if let height = self.intrinsicHeight?.numberValue {
+            let constrainedSize = CGSize(width: 1000, height: height)
+            let idealSize = self.idealSize(constrainedSize: constrainedSize)
+            return Length.absolute(idealSize.width + padding)
+        }
+        
+        return nil
+    }
+    
+    
+}

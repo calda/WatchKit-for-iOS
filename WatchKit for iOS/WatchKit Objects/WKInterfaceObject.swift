@@ -12,6 +12,7 @@ import UIKit
 open class WKInterfaceObject : WatchComponent, UIViewBacked {
     
     var backingView: UIView?
+    weak var controller: WKInterfaceController?
     
     var alpha: CGFloat { didSet { view()?.alpha = alpha } }
     var hidden: Bool { didSet { view()?.isHidden = hidden } }
