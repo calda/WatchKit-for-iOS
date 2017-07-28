@@ -1,5 +1,5 @@
 # WatchKit for iOS
-WatchKit for iOS is a partial reimplementation of the WatchKit framework. It allows Apple Watch apps to run in a container view on iOS. This project was a **finalist** at HackGT 2016 in Atlanta, GA.
+WatchKit for iOS is a UIKit-based reimplementation of the WatchKit framework. It lets you run Apple Watch apps on iOS. This project was a **finalist** at HackGT 2016 in Atlanta, GA.
 
 ## Demo
 Emoji Sudoku **(**[App Store](https://itunes.apple.com/us/app/emoji-sudoku/id992670313?mt=8), [GitHub](https://github.com/calda/Emoji-Sudoku)**)** is a WatchKit app I made back in 2015. WatchKit for iOS is capable of running the app's original source code with almost no modifications.
