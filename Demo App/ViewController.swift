@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.watchStoryboard = WatchStoryboard(fileName: "Interface", applicationNamespace: "Basic_Watch_App")
+        self.watchStoryboard = WatchStoryboard(fileName: "Interface", applicationNamespace: "WatchKit_Demo")
         
         guard let watchView = watchStoryboard?.watchView else { return }
         self.watchContainer.addSubview(watchView)
