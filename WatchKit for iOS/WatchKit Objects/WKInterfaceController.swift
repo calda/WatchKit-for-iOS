@@ -72,7 +72,7 @@ open class WKInterfaceController : WatchComponent, WatchLayoutDelegate {
         let timeLabelBounds = CGRect(x: 113, y: 3, width: 40, height: 16)
         let timeLabel = UILabel(frame: timeLabelBounds)
         timeLabel.text = "10:09"
-        timeLabel.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightSemibold)
+        timeLabel.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         timeLabel.textAlignment = .right
         timeLabel.textColor = UIColor.white
         statusBar.addSubview(timeLabel)

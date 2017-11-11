@@ -40,13 +40,13 @@ class WatchStoryboardFont : WatchComponent {
 enum WKFontStyle {
     case headline, body, caption1, caption2, footnote
     
-    var spec: (weight: CGFloat, size: CGFloat, leading: CGFloat, tracking: CGFloat) {
+    var spec: (weight: UIFont.Weight, size: CGFloat, leading: CGFloat, tracking: CGFloat) {
         switch self {
-            case .headline: return (weight: UIFontWeightSemibold, size: 16, leading: 18.5, tracking: 0)
-            case .body:     return (weight: UIFontWeightRegular, size: 16, leading: 18.5, tracking: 0)
-            case .caption1: return (weight: UIFontWeightRegular, size: 15, leading: 17.5, tracking: 5)
-            case .caption2: return (weight: UIFontWeightRegular, size: 14, leading: 16.5, tracking: 14)
-            case .footnote: return (weight: UIFontWeightRegular, size: 13, leading: 15.5, tracking: 16)
+            case .headline: return (weight: .semibold, size: 16, leading: 18.5, tracking: 0)
+            case .body:     return (weight: .regular, size: 16, leading: 18.5, tracking: 0)
+            case .caption1: return (weight: .regular, size: 15, leading: 17.5, tracking: 5)
+            case .caption2: return (weight: .regular, size: 14, leading: 16.5, tracking: 14)
+            case .footnote: return (weight: .regular, size: 13, leading: 15.5, tracking: 16)
         }
     }
     
@@ -62,17 +62,17 @@ enum WKFontStyle {
         return .body
     }
     
-    static func weightForString(string: String) -> CGFloat {
-        if string == "ultralight" { return UIFontWeightUltraLight }
-        if string == "thin" { return UIFontWeightThin }
-        if string == "light" { return UIFontWeightLight }
-        if string == "regular" { return UIFontWeightRegular }
-        if string == "medium" { return UIFontWeightMedium }
-        if string == "semibold" { return UIFontWeightRegular }
-        if string == "bold" { return UIFontWeightBold }
-        if string == "heavy" { return UIFontWeightHeavy }
-        if string == "black" { return UIFontWeightBlack }
-        return UIFontWeightRegular
+    static func weightForString(string: String) -> UIFont.Weight {
+        if string == "ultralight" { return .ultraLight }
+        if string == "thin" { return .thin }
+        if string == "light" { return .light }
+        if string == "regular" { return .regular }
+        if string == "medium" { return .medium }
+        if string == "semibold" { return .semibold }
+        if string == "bold" { return .bold }
+        if string == "heavy" { return .heavy }
+        if string == "black" { return .black }
+        return .regular
     }
     
 }

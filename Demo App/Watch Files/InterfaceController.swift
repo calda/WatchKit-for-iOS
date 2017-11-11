@@ -124,7 +124,7 @@ class InterfaceController: WKInterfaceController {
             populateWithSolution()
             
             //pull custom emoji data from iCloud
-            let store = NSUbiquitousKeyValueStore.default()
+            let store = NSUbiquitousKeyValueStore.default
             store.synchronize()
             if store.string(forKey: "EMOJI_1") == nil {
                 store.set("😎", forKey: "EMOJI_1")

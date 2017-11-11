@@ -38,13 +38,10 @@ open class WKInterfaceObjectWithText : WKInterfaceObject {
         let systemFont = UIFont.systemFont(ofSize: UIFont.systemFontSize)
         let font = self.fontForIntrinsicSizeCalulation() ?? systemFont
         
-        let attributes: [String : AnyObject] = [NSFontAttributeName : font]
-        let drawingOptions: NSStringDrawingOptions = [.usesLineFragmentOrigin, .usesFontLeading]
-        
         let content = NSString(string: text)
         return content.boundingRect(with: constrainedSize,
-                                    options: drawingOptions,
-                                    attributes: attributes,
+                                    options: [.usesLineFragmentOrigin, .usesFontLeading],
+                                    attributes: [.font : font],
                                     context: nil).size
     }
     

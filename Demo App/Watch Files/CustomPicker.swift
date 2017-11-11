@@ -44,7 +44,7 @@ class CustomPicker: WKInterfaceController {
         
         if isNewToSet {
             
-            let store = NSUbiquitousKeyValueStore.default()
+            let store = NSUbiquitousKeyValueStore.default
             store.synchronize()
             
             if main!.selectedEmoji! == .one {

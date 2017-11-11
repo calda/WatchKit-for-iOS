@@ -80,7 +80,7 @@ class CustomMain : WKInterfaceController {
         EMOJI_3 = selected[2]
         EMOJI_4 = selected[3]
         
-        let store = NSUbiquitousKeyValueStore.default()
+        let store = NSUbiquitousKeyValueStore.default
         store.synchronize()
         
         store.set(selected[0], forKey: "EMOJI_1")
