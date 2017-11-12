@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NdI-xK-dWh">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Watch Container View Controller-->
+        <scene sceneID="ioc-xX-POh">
+            <objects>
+                <viewController id="NdI-xK-dWh" customClass="WatchContainerViewController" customModule="WatchKit_iOS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jKr-1U-h4x"/>
+                        <viewControllerLayoutGuide type="bottom" id="zmy-bx-THz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XX4-5q-aEg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AaZ-Rz-IDV" userLabel="black background">
+                                <rect key="frame" x="102.5" y="198.5" width="170" height="220"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="7p3-cA-IdP"/>
+                                    <constraint firstAttribute="height" constant="220" id="wLk-bo-cFE"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ikE-3a-ASp" userLabel="watch container">
+                                <rect key="frame" x="109.5" y="211" width="156" height="195"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="156" id="awI-3K-mBy"/>
+                                    <constraint firstAttribute="height" constant="195" id="vIH-wd-icH"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Apple Watch chrome.png" translatesAutoresizingMaskIntoConstraints="NO" id="iH2-2q-Urm">
+                                <rect key="frame" x="60.5" y="96" width="254" height="425"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iH2-2q-Urm" secondAttribute="height" multiplier="187:313" id="CHx-gc-DGD"/>
+                                    <constraint firstAttribute="width" constant="254" id="JzS-gW-kZD"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="JCL-u5-Jh0" userLabel="force touch options stack view">
+                                <rect key="frame" x="75" y="549" width="225" height="46"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnb-F9-YmM">
+                                        <rect key="frame" x="0.0" y="0.0" width="225" height="46"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.055704195210000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                        <state key="normal" title="Simulate Force Touch">
+                                            <color key="titleColor" red="0.36148742760000002" green="0.69239859449999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="simulateForceTouch:" destination="NdI-xK-dWh" eventType="touchUpInside" id="N2k-Xn-CEP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97000002860000001" green="0.97000002860000001" blue="0.97000002860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="iH2-2q-Urm" secondAttribute="centerX" id="1wv-qc-9Wh"/>
+                            <constraint firstItem="AaZ-Rz-IDV" firstAttribute="centerX" secondItem="ikE-3a-ASp" secondAttribute="centerX" id="6n5-MX-bYj"/>
+                            <constraint firstItem="JCL-u5-Jh0" firstAttribute="centerX" secondItem="XX4-5q-aEg" secondAttribute="centerX" id="IZJ-va-zJ6"/>
+                            <constraint firstItem="ikE-3a-ASp" firstAttribute="centerY" secondItem="iH2-2q-Urm" secondAttribute="centerY" id="Ir8-ec-Hkn"/>
+                            <constraint firstItem="AaZ-Rz-IDV" firstAttribute="centerY" secondItem="ikE-3a-ASp" secondAttribute="centerY" id="Juy-ZZ-xPQ"/>
+                            <constraint firstItem="JCL-u5-Jh0" firstAttribute="top" secondItem="iH2-2q-Urm" secondAttribute="bottom" constant="28" id="UYd-4B-7CL"/>
+                            <constraint firstAttribute="centerY" secondItem="iH2-2q-Urm" secondAttribute="centerY" constant="25" id="Wss-dB-mqA"/>
+                            <constraint firstAttribute="centerY" secondItem="iH2-2q-Urm" secondAttribute="centerY" id="dbX-YC-yEm"/>
+                            <constraint firstAttribute="width" secondItem="iH2-2q-Urm" secondAttribute="height" multiplier="375:667" id="dvT-XA-Uxc"/>
+                            <constraint firstItem="ikE-3a-ASp" firstAttribute="centerX" secondItem="iH2-2q-Urm" secondAttribute="centerX" id="lQF-5f-9Yq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TbE-y3-b4n"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dvT-XA-Uxc"/>
+                                <exclude reference="dbX-YC-yEm"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="watchContainer" destination="ikE-3a-ASp" id="y6l-vZ-aek"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0LI-yD-VJG" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="220.5" y="390.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Apple Watch chrome.png" width="600" height="1000"/>
+    </resources>
+</document>

@@ -1,102 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A320" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="68K-I9-b6p">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Launch View Controller-->
+        <scene sceneID="KQa-cK-CKa">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Basic_Watch_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="68K-I9-b6p" customClass="LaunchViewController" customModule="Demo_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="eKk-c1-KBe"/>
+                        <viewControllerLayoutGuide type="bottom" id="IYY-Vb-bFH"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" id="0wc-2o-Nxk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iQ4-T8-foz" userLabel="black background">
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="220" id="Qt1-nd-REf"/>
-                                    <constraint firstAttribute="width" constant="170" id="c2b-4d-SlR"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="58H-lT-5g7" userLabel="watch container">
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="195" id="3bY-Xa-XNa"/>
-                                    <constraint firstAttribute="width" constant="156" id="M76-RI-ck7"/>
-                                </constraints>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Apple Watch" translatesAutoresizingMaskIntoConstraints="NO" id="8Wa-mA-XAr">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="254" id="0s1-oY-FiM"/>
-                                    <constraint firstAttribute="width" secondItem="8Wa-mA-XAr" secondAttribute="height" multiplier="187:313" id="j9p-gf-ZL8"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E5o-0l-Dpq">
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                <state key="normal" title="gives menu of options">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.45154644691780821" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="simulateForceTouch:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lVs-cm-Kuk"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7b8-Mk-N5H">
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.055704195205479451" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <state key="normal" title="Simulate Force Touch">
-                                    <color key="titleColor" red="0.36148742756419888" green="0.69239859448538887" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="simulateForceTouch:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="iGJ-Cd-imo"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.97000002861022949" green="0.97000002861022949" blue="0.97000002861022949" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="8Wa-mA-XAr" secondAttribute="centerX" id="6WR-6c-AeV"/>
-                            <constraint firstItem="E5o-0l-Dpq" firstAttribute="top" secondItem="7b8-Mk-N5H" secondAttribute="bottom" id="8rr-Fm-iMr"/>
-                            <constraint firstItem="58H-lT-5g7" firstAttribute="centerY" secondItem="8Wa-mA-XAr" secondAttribute="centerY" id="A7W-bN-5hy"/>
-                            <constraint firstItem="iQ4-T8-foz" firstAttribute="centerX" secondItem="58H-lT-5g7" secondAttribute="centerX" id="Dov-4Y-0bv"/>
-                            <constraint firstAttribute="centerY" secondItem="8Wa-mA-XAr" secondAttribute="centerY" constant="25" id="JCx-mT-edt"/>
-                            <constraint firstItem="58H-lT-5g7" firstAttribute="centerX" secondItem="8Wa-mA-XAr" secondAttribute="centerX" id="Oe7-4V-MZ2"/>
-                            <constraint firstAttribute="width" secondItem="8Wa-mA-XAr" secondAttribute="height" multiplier="375:667" id="YNs-VO-qPX"/>
-                            <constraint firstItem="E5o-0l-Dpq" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="ag8-Tj-Qm5"/>
-                            <constraint firstItem="iQ4-T8-foz" firstAttribute="centerY" secondItem="58H-lT-5g7" secondAttribute="centerY" id="c5S-dp-nZY"/>
-                            <constraint firstAttribute="centerY" secondItem="8Wa-mA-XAr" secondAttribute="centerY" id="gtS-2p-4YR"/>
-                            <constraint firstItem="7b8-Mk-N5H" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="rFx-iI-mqq"/>
-                            <constraint firstItem="7b8-Mk-N5H" firstAttribute="top" secondItem="8Wa-mA-XAr" secondAttribute="bottom" constant="28" id="tCz-rC-DSM"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="YNs-VO-qPX"/>
-                                <exclude reference="gtS-2p-4YR"/>
-                            </mask>
-                        </variation>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <connections>
-                        <outlet property="watchContainer" destination="58H-lT-5g7" id="mfm-wt-zGv"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vd3-VX-yO8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="220.5" y="390.5"/>
+            <point key="canvasLocation" x="337" y="428"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Apple Watch" width="600" height="1000"/>
-    </resources>
 </document>

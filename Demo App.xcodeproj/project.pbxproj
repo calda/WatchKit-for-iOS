@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2E3FB8641FB7C02D00085EAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3FB8631FB7C02D00085EAB /* AppDelegate.swift */; };
-		2E3FB8661FB7C02D00085EAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3FB8651FB7C02D00085EAB /* ViewController.swift */; };
 		2E3FB8691FB7C02D00085EAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E3FB8671FB7C02D00085EAB /* Main.storyboard */; };
 		2E3FB86B1FB7C02D00085EAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E3FB86A1FB7C02D00085EAB /* Assets.xcassets */; };
 		2E3FB86E1FB7C02D00085EAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E3FB86C1FB7C02D00085EAB /* LaunchScreen.storyboard */; };
@@ -26,7 +25,6 @@
 		2E3FB8BF1FB7C0CF00085EAB /* Length.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3FB8A31FB7C0CE00085EAB /* Length.swift */; };
 		2E3FB8C01FB7C0CF00085EAB /* WatchLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3FB8A41FB7C0CE00085EAB /* WatchLayoutView.swift */; };
 		2E3FB8C11FB7C0CF00085EAB /* WatchLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3FB8A51FB7C0CE00085EAB /* WatchLayoutDelegate.swift */; };
-		2E3FB8C21FB7C0CF00085EAB /* ForceTouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3FB8A61FB7C0CE00085EAB /* ForceTouchView.swift */; };
 		2E3FB8C31FB7C0CF00085EAB /* WatchPresentationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3FB8A71FB7C0CE00085EAB /* WatchPresentationStyle.swift */; };
 		2E3FB8C51FB7C0CF00085EAB /* WatchStoryboardOutlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3FB8AA1FB7C0CE00085EAB /* WatchStoryboardOutlet.swift */; };
 		2E3FB8C61FB7C0CF00085EAB /* WatchStoryboardMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3FB8AB1FB7C0CE00085EAB /* WatchStoryboardMenuItem.swift */; };
@@ -46,6 +44,10 @@
 		2E3FB8DC1FB7C27200085EAB /* CustomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3FB8D51FB7C27200085EAB /* CustomPicker.swift */; };
 		2E3FB8DD1FB7C27200085EAB /* CustomMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3FB8D61FB7C27200085EAB /* CustomMain.swift */; };
 		2E3FB8DE1FB7C27200085EAB /* EmojiPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3FB8D71FB7C27200085EAB /* EmojiPicker.swift */; };
+		2E3FB8E11FB7CC0D00085EAB /* WatchContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3FB8DF1FB7CAB700085EAB /* WatchContainerViewController.swift */; };
+		2E3FB8E51FB7CCBC00085EAB /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3FB8E41FB7CCBC00085EAB /* LaunchViewController.swift */; };
+		2E3FB8E61FB7CE5D00085EAB /* WatchContainer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E3FB8E21FB7CC8100085EAB /* WatchContainer.storyboard */; };
+		2E3FB8E81FB7CE7000085EAB /* Apple Watch chrome.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E3FB8E71FB7CE6F00085EAB /* Apple Watch chrome.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +77,6 @@
 /* Begin PBXFileReference section */
 		2E3FB8601FB7C02D00085EAB /* Demo App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E3FB8631FB7C02D00085EAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2E3FB8651FB7C02D00085EAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2E3FB8681FB7C02D00085EAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2E3FB86A1FB7C02D00085EAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E3FB86D1FB7C02D00085EAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -94,7 +95,6 @@
 		2E3FB8A31FB7C0CE00085EAB /* Length.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Length.swift; sourceTree = "<group>"; };
 		2E3FB8A41FB7C0CE00085EAB /* WatchLayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchLayoutView.swift; sourceTree = "<group>"; };
 		2E3FB8A51FB7C0CE00085EAB /* WatchLayoutDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchLayoutDelegate.swift; sourceTree = "<group>"; };
-		2E3FB8A61FB7C0CE00085EAB /* ForceTouchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForceTouchView.swift; sourceTree = "<group>"; };
 		2E3FB8A71FB7C0CE00085EAB /* WatchPresentationStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchPresentationStyle.swift; sourceTree = "<group>"; };
 		2E3FB8AA1FB7C0CE00085EAB /* WatchStoryboardOutlet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchStoryboardOutlet.swift; sourceTree = "<group>"; };
 		2E3FB8AB1FB7C0CE00085EAB /* WatchStoryboardMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchStoryboardMenuItem.swift; sourceTree = "<group>"; };
@@ -114,6 +114,10 @@
 		2E3FB8D51FB7C27200085EAB /* CustomPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPicker.swift; sourceTree = "<group>"; };
 		2E3FB8D61FB7C27200085EAB /* CustomMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMain.swift; sourceTree = "<group>"; };
 		2E3FB8D71FB7C27200085EAB /* EmojiPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiPicker.swift; sourceTree = "<group>"; };
+		2E3FB8DF1FB7CAB700085EAB /* WatchContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchContainerViewController.swift; sourceTree = "<group>"; };
+		2E3FB8E21FB7CC8100085EAB /* WatchContainer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WatchContainer.storyboard; sourceTree = "<group>"; };
+		2E3FB8E41FB7CCBC00085EAB /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		2E3FB8E71FB7CE6F00085EAB /* Apple Watch chrome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Apple Watch chrome.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,11 +162,11 @@
 			children = (
 				2E3FB8D01FB7C27200085EAB /* Watch Files */,
 				2E3FB8631FB7C02D00085EAB /* AppDelegate.swift */,
-				2E3FB8651FB7C02D00085EAB /* ViewController.swift */,
-				2E3FB8671FB7C02D00085EAB /* Main.storyboard */,
 				2E3FB86A1FB7C02D00085EAB /* Assets.xcassets */,
+				2E3FB8671FB7C02D00085EAB /* Main.storyboard */,
 				2E3FB86C1FB7C02D00085EAB /* LaunchScreen.storyboard */,
 				2E3FB86F1FB7C02D00085EAB /* Info.plist */,
+				2E3FB8E41FB7CCBC00085EAB /* LaunchViewController.swift */,
 			);
 			path = "Demo App";
 			sourceTree = "<group>";
@@ -176,6 +180,9 @@
 				2E3FB8A01FB7C0CE00085EAB /* WatchKit for iOS.h */,
 				2E3FB8981FB7C0CE00085EAB /* WatchKit Objects */,
 				2E3FB88F1FB7C0A800085EAB /* Info.plist */,
+				2E3FB8DF1FB7CAB700085EAB /* WatchContainerViewController.swift */,
+				2E3FB8E21FB7CC8100085EAB /* WatchContainer.storyboard */,
+				2E3FB8E71FB7CE6F00085EAB /* Apple Watch chrome.png */,
 			);
 			path = "WatchKit for iOS";
 			sourceTree = "<group>";
@@ -201,7 +208,6 @@
 				2E3FB8A31FB7C0CE00085EAB /* Length.swift */,
 				2E3FB8A41FB7C0CE00085EAB /* WatchLayoutView.swift */,
 				2E3FB8A51FB7C0CE00085EAB /* WatchLayoutDelegate.swift */,
-				2E3FB8A61FB7C0CE00085EAB /* ForceTouchView.swift */,
 				2E3FB8A71FB7C0CE00085EAB /* WatchPresentationStyle.swift */,
 			);
 			path = "View Layer";
@@ -352,6 +358,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E3FB8E61FB7CE5D00085EAB /* WatchContainer.storyboard in Resources */,
+				2E3FB8E81FB7CE7000085EAB /* Apple Watch chrome.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,7 +370,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E3FB8661FB7C02D00085EAB /* ViewController.swift in Sources */,
 				2E3FB8D91FB7C27200085EAB /* InterfaceController.swift in Sources */,
 				2E3FB8DC1FB7C27200085EAB /* CustomPicker.swift in Sources */,
 				2E3FB8D81FB7C27200085EAB /* SudokuCell.swift in Sources */,
@@ -370,6 +377,7 @@
 				2E3FB8DD1FB7C27200085EAB /* CustomMain.swift in Sources */,
 				2E3FB8DE1FB7C27200085EAB /* EmojiPicker.swift in Sources */,
 				2E3FB8641FB7C02D00085EAB /* AppDelegate.swift in Sources */,
+				2E3FB8E51FB7CCBC00085EAB /* LaunchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,12 +394,12 @@
 				2E3FB8C71FB7C0CF00085EAB /* WatchStoryboardSeugue.swift in Sources */,
 				2E3FB8C81FB7C0CF00085EAB /* WatchStoryboardColor.swift in Sources */,
 				2E3FB8CF1FB7C0CF00085EAB /* WatchStoryboard.swift in Sources */,
-				2E3FB8C21FB7C0CF00085EAB /* ForceTouchView.swift in Sources */,
 				2E3FB8C61FB7C0CF00085EAB /* WatchStoryboardMenuItem.swift in Sources */,
 				2E3FB8C01FB7C0CF00085EAB /* WatchLayoutView.swift in Sources */,
 				2E3FB8C31FB7C0CF00085EAB /* WatchPresentationStyle.swift in Sources */,
 				2E3FB8CA1FB7C0CF00085EAB /* WatchStoryboardAction.swift in Sources */,
 				2E3FB8BF1FB7C0CF00085EAB /* Length.swift in Sources */,
+				2E3FB8E11FB7CC0D00085EAB /* WatchContainerViewController.swift in Sources */,
 				2E3FB8B61FB7C0CF00085EAB /* WKInterfaceController.swift in Sources */,
 				2E3FB8BA1FB7C0CF00085EAB /* WatchKit Enums.swift in Sources */,
 				2E3FB8BB1FB7C0CF00085EAB /* WKInterfaceGroup.swift in Sources */,

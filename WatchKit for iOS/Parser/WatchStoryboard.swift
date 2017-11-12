@@ -9,17 +9,30 @@
 import UIKit
 import Foundation
 
+// MARK: - WatchStoryboardDelegate
+
+public protocol WatchStoryboardDelegate: class {
+    func storyboard(_ storyboard: WatchStoryboard, didUpdateForceTouchOptionsTo forceTouchOptions: [WatchStoryboardMenuItem])
+}
+
+// MARK: - WatchStoryboard
+
 public class WatchStoryboard : NSObject, XMLParserDelegate {
 
     public var applicationNamespace: String
     var initialControllerId: String?
     
     public var initialController: WKInterfaceController?
-    public var currentController: WKInterfaceController?
+    public var currentController: WKInterfaceController? {
+        didSet {
+            delegate?.storyboard(self, didUpdateForceTouchOptionsTo: currentController?.menuItems ?? [])
+        }
+    }
     
     public var watchView: UIView
     var contentView: UIView
-    var forceTouchView: ForceTouchView
+    
+    public var delegate: WatchStoryboardDelegate?
     
     //MARK: - Set up
     
@@ -32,7 +45,6 @@ public class WatchStoryboard : NSObject, XMLParserDelegate {
         self.initialControllerId = nil
         self.watchView = UIView()
         self.contentView = UIView()
-        self.forceTouchView = ForceTouchView()
         
         super.init()
         
@@ -49,10 +61,6 @@ public class WatchStoryboard : NSObject, XMLParserDelegate {
         
         self.contentView.frame = CGRect(origin: .zero, size: viewSize)
         self.watchView.addSubview(self.contentView)
-        
-        self.forceTouchView.frame = CGRect(origin: .zero, size: viewSize)
-        self.forceTouchView.isUserInteractionEnabled = true
-        self.watchView.addSubview(self.forceTouchView)
         
         if let initialController = self.initialController {
             initialController.willActivate()
@@ -114,5 +122,15 @@ public class WatchStoryboard : NSObject, XMLParserDelegate {
         setUpViewForInitialController()
     }
     
+    // MARK: Force Touch Actions
+    
+    func performForceTouchAction(_ menuItem: WatchStoryboardMenuItem) {
+        menuItem.actions.forEach { action in
+            if let selectorName = action.selectorName {
+                let sel = Selector(selectorName)
+                let _ = currentController?.perform(sel)
+            }
+        }
+    }
     
 }
