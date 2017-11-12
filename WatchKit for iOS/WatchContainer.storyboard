@@ -46,51 +46,70 @@
                                     <constraint firstAttribute="width" constant="254" id="JzS-gW-kZD"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="JCL-u5-Jh0" userLabel="force touch options stack view">
-                                <rect key="frame" x="75" y="549" width="225" height="46"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYN-0P-n3u">
+                                <rect key="frame" x="40" y="566" width="295" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnb-F9-YmM">
-                                        <rect key="frame" x="0.0" y="0.0" width="225" height="46"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.055704195210000002" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
-                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                        <state key="normal" title="Simulate Force Touch">
-                                            <color key="titleColor" red="0.36148742760000002" green="0.69239859449999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="simulateForceTouch:" destination="NdI-xK-dWh" eventType="touchUpInside" id="N2k-Xn-CEP"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="JCL-u5-Jh0" userLabel="force touch options stack view">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnb-F9-YmM">
+                                                <rect key="frame" x="0.0" y="0.0" width="295" height="50"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.055704195210000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                <state key="normal" title="Buttons">
+                                                    <color key="titleColor" red="0.36148742760000002" green="0.69239859449999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" priority="900" constant="400" id="N4V-ta-a24"/>
+                                            <constraint firstAttribute="height" constant="50" id="dao-cN-VSc"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="0Wb-ra-pEm"/>
+                                    <constraint firstAttribute="trailing" secondItem="JCL-u5-Jh0" secondAttribute="trailing" id="8l0-qf-qed"/>
+                                    <constraint firstItem="JCL-u5-Jh0" firstAttribute="leading" secondItem="NYN-0P-n3u" secondAttribute="leading" id="Krc-nt-wGi"/>
+                                    <constraint firstItem="JCL-u5-Jh0" firstAttribute="top" secondItem="NYN-0P-n3u" secondAttribute="top" id="Smq-GO-cCz"/>
+                                    <constraint firstItem="JCL-u5-Jh0" firstAttribute="centerX" secondItem="NYN-0P-n3u" secondAttribute="centerX" id="Z8M-UA-42T"/>
+                                    <constraint firstAttribute="bottom" secondItem="JCL-u5-Jh0" secondAttribute="bottom" id="lAi-Sp-8lS"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.97000002860000001" green="0.97000002860000001" blue="0.97000002860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="iH2-2q-Urm" secondAttribute="centerX" id="1wv-qc-9Wh"/>
                             <constraint firstItem="AaZ-Rz-IDV" firstAttribute="centerX" secondItem="ikE-3a-ASp" secondAttribute="centerX" id="6n5-MX-bYj"/>
-                            <constraint firstItem="JCL-u5-Jh0" firstAttribute="centerX" secondItem="XX4-5q-aEg" secondAttribute="centerX" id="IZJ-va-zJ6"/>
+                            <constraint firstItem="NYN-0P-n3u" firstAttribute="centerX" secondItem="XX4-5q-aEg" secondAttribute="centerX" id="7g9-gW-w9f"/>
+                            <constraint firstItem="NYN-0P-n3u" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TbE-y3-b4n" secondAttribute="leading" constant="40" id="9A7-Sg-4c1"/>
+                            <constraint firstItem="NYN-0P-n3u" firstAttribute="top" secondItem="iH2-2q-Urm" secondAttribute="bottom" constant="45" id="Cs9-hr-dbh"/>
                             <constraint firstItem="ikE-3a-ASp" firstAttribute="centerY" secondItem="iH2-2q-Urm" secondAttribute="centerY" id="Ir8-ec-Hkn"/>
                             <constraint firstItem="AaZ-Rz-IDV" firstAttribute="centerY" secondItem="ikE-3a-ASp" secondAttribute="centerY" id="Juy-ZZ-xPQ"/>
-                            <constraint firstItem="JCL-u5-Jh0" firstAttribute="top" secondItem="iH2-2q-Urm" secondAttribute="bottom" constant="28" id="UYd-4B-7CL"/>
                             <constraint firstAttribute="centerY" secondItem="iH2-2q-Urm" secondAttribute="centerY" constant="25" id="Wss-dB-mqA"/>
                             <constraint firstAttribute="centerY" secondItem="iH2-2q-Urm" secondAttribute="centerY" id="dbX-YC-yEm"/>
                             <constraint firstAttribute="width" secondItem="iH2-2q-Urm" secondAttribute="height" multiplier="375:667" id="dvT-XA-Uxc"/>
                             <constraint firstItem="ikE-3a-ASp" firstAttribute="centerX" secondItem="iH2-2q-Urm" secondAttribute="centerX" id="lQF-5f-9Yq"/>
+                            <constraint firstItem="TbE-y3-b4n" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NYN-0P-n3u" secondAttribute="trailing" constant="40" id="pTF-fe-UKo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TbE-y3-b4n"/>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="dvT-XA-Uxc"/>
                                 <exclude reference="dbX-YC-yEm"/>
+                                <exclude reference="dvT-XA-Uxc"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="menuItemStackView" destination="JCL-u5-Jh0" id="nMH-tD-gZb"/>
+                        <outlet property="stackViewContainer" destination="NYN-0P-n3u" id="jeo-xU-Zvv"/>
                         <outlet property="watchContainer" destination="ikE-3a-ASp" id="y6l-vZ-aek"/>
                     </connections>
                 </viewController>

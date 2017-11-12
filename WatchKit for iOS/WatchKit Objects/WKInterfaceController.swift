@@ -182,11 +182,15 @@ open class WKInterfaceController : WatchComponent, WatchLayoutDelegate {
         }
         
         //call lifecycle methods and animate
-        controller.awake(withContext: context)
+        if direction == .forward {
+            controller.awake(withContext: context)
+        }
         
         self.willDisappear()
         controller.willActivate()
 
+        storyboard.delegate?.storyboard(storyboard, didUpdateForceTouchOptionsTo: controller.menuItems)
+        
         style.transition(direction, to: controller, in: storyboard, completion: {
             self.didDeactivate()
             controller.didAppear()

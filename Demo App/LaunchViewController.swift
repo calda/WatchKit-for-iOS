@@ -13,12 +13,9 @@ class LaunchViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         let watchVC = WatchContainerViewController.create(withInterfaceFileNamed: "Interface", inNamespace: "Demo App")
-        present(watchVC, animated: false, completion: nil)
-        
-        watchVC.view.alpha = 0.0
-        UIView.animate(withDuration: 0.25, animations: {
-            watchVC.view.alpha = 1.0
-        })
+        watchVC.modalPresentationStyle = .overFullScreen
+        watchVC.modalTransitionStyle = .crossDissolve
+        present(watchVC, animated: true, completion: nil)
     }
     
 }

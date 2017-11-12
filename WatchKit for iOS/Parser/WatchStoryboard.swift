@@ -23,11 +23,7 @@ public class WatchStoryboard : NSObject, XMLParserDelegate {
     var initialControllerId: String?
     
     public var initialController: WKInterfaceController?
-    public var currentController: WKInterfaceController? {
-        didSet {
-            delegate?.storyboard(self, didUpdateForceTouchOptionsTo: currentController?.menuItems ?? [])
-        }
-    }
+    public var currentController: WKInterfaceController?
     
     public var watchView: UIView
     var contentView: UIView
@@ -68,6 +64,7 @@ public class WatchStoryboard : NSObject, XMLParserDelegate {
             initialController.didAppear()
             
             self.currentController = self.initialController
+            delegate?.storyboard(self, didUpdateForceTouchOptionsTo: self.initialController?.menuItems ?? [])
         }
     }
     

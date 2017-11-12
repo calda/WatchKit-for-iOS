@@ -43,7 +43,7 @@ enum WatchPresentationStyle {
         storyboard.contentView.addSubview(newView)
         newView.frame.origin = CGPoint(x: 0, y: storyboard.contentView.frame.height)
         
-        UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: [], animations: {
+        UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: [], animations: {
             newView.frame.origin = .zero
         }, completion: { _ in
             currentView.removeFromSuperview()
@@ -59,7 +59,7 @@ enum WatchPresentationStyle {
         storyboard.contentView.sendSubview(toBack: newView)
         newView.frame.origin = .zero
         
-        UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: [], animations: {
+        UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: [], animations: {
                 currentView.frame.origin = CGPoint(x: 0, y: storyboard.contentView.frame.height)
             }, completion: { _ in
                 currentView.removeFromSuperview()
@@ -77,7 +77,7 @@ enum WatchPresentationStyle {
         storyboard.contentView.addSubview(newView)
         newView.frame.origin = CGPoint(x: storyboard.contentView.frame.width, y: 0)
         
-        UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: [], animations: {
+        UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: [], animations: {
             newView.frame.origin = .zero
             currentView.frame.origin = CGPoint(x: -40, y: 0)
             currentView.alpha = 0.0
@@ -96,7 +96,7 @@ enum WatchPresentationStyle {
         newView.frame.origin = CGPoint(x: -40, y: 0)
         newView.alpha = 0.0
         
-        UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: [], animations: {
+        UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: [], animations: {
             currentView.frame.origin = CGPoint(x: storyboard.contentView.frame.width, y: 0)
             newView.frame.origin = .zero
             newView.alpha = 1.0
